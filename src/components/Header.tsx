@@ -21,6 +21,8 @@ interface HeaderProps {
   stats: GlobalStats | null;
   config: AppConfig | null;
   health: ProviderHealth | null;
+  activeMainTab: 'news_feed' | 'ticker_intelligence';
+  onSelectMainTab: (tab: 'news_feed' | 'ticker_intelligence') => void;
   onOpenFetch: () => void;
   onOpenTickers: () => void;
   onOpenTests: () => void;
@@ -38,6 +40,8 @@ export const Header: React.FC<HeaderProps> = ({
   stats,
   config,
   health,
+  activeMainTab,
+  onSelectMainTab,
   onOpenFetch,
   onOpenTickers,
   onOpenTests,
@@ -142,10 +146,40 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
 
               </div>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <p className="text-xs text-slate-600 mt-0.5 truncate max-w-xs sm:max-w-none">
                 Yahoo Finance RSS news retrieval • Deduplication engine • Many-to-many SQLite relations
               </p>
             </div>
+          </div>
+
+          {/* Main Navigation Tabs */}
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+            <button
+              onClick={() => onSelectMainTab('news_feed')}
+              className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition cursor-pointer flex items-center gap-1.5 ${
+                activeMainTab === 'news_feed'
+                  ? 'bg-white text-slate-900 shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+              }`}
+            >
+              <Database className="w-3.5 h-3.5 text-emerald-600" />
+              <span>News Feed</span>
+            </button>
+            <button
+              id="nav-ticker-intelligence-tab"
+              onClick={() => onSelectMainTab('ticker_intelligence')}
+              className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition cursor-pointer flex items-center gap-1.5 ${
+                activeMainTab === 'ticker_intelligence'
+                  ? 'bg-indigo-600 text-white shadow-xs font-bold'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+              }`}
+            >
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>Ticker Intelligence</span>
+              <span className="px-1.5 py-0.2 rounded-full text-[9px] font-black uppercase tracking-wider bg-white/20 text-current">
+                NEW
+              </span>
+            </button>
           </div>
 
           {/* Quick Metrics Bar & Action Buttons */}
@@ -194,6 +228,17 @@ export const Header: React.FC<HeaderProps> = ({
                 v2.0
               </span>
             </button>
+
+            {/* Download Source ZIP Button */}
+            <a
+              href="/api/download-zip"
+              download="newsfeedapp_production_source.zip"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition shadow-xs cursor-pointer"
+              title="Download clean production-ready ZIP archive of source code"
+            >
+              <Database className="w-3.5 h-3.5 text-emerald-200" />
+              <span>Download ZIP</span>
+            </a>
 
             {/* Test Suite Runner Button */}
             <button

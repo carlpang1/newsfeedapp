@@ -1,0 +1,9 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "prompt_version": "news-analysis-v1",
+  "analysis_version": "1.0",
+  "dataset_size": 95,
+  "benchmark_mode": true,
+  "GEMINI_API_KEY": "<SET_IN_NEW_ENVIRONMENT>"
+}

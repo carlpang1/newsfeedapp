@@ -15,7 +15,11 @@ import {
 import { AIEngine } from '../services/aiEngine.js';
 import { getAIConfig, DEFAULT_MODEL } from '../config.js';
 import {
+  getDb,
   getNews,
+  getTickers,
+  createTicker,
+  deleteTicker,
   insertArticle,
   reclassifyAllNews,
   getCalibrationStats,
@@ -24,6 +28,7 @@ import {
   getBatchAIStatistics,
   getAIUsageDashboard,
 } from '../database.js';
+import { TickerSummaryEngine } from '../services/tickerSummary.js';
 
 export interface TestResultItem {
   id: string;
@@ -528,7 +533,7 @@ export async function runAllTests(): Promise<TestSuiteSummary> {
       const url = ArticleDeduplicator.normalizeUrl(art.url);
       testDb.run(
         `INSERT OR IGNORE INTO news (title, publisher, url, published_at, summary, article_hash, retrieved_at, created_at)
-         VALUES ('${art.title.replace(/'/g, "''")}', '${art.publisher}', '${url}', '${art.published_at}', '${art.summary.replace(/'/g, "''")}', '${hash}', '${now}', '${now}')`
+         VALUES ('${art.title.replace(/'/g, "''")}', '${(art.publisher || '').replace(/'/g, "''")}', '${url}', '${art.published_at}', '${art.summary.replace(/'/g, "''")}', '${hash}', '${now}', '${now}')`
       );
     }
 
@@ -1369,6 +1374,323 @@ export async function runAllTests(): Promise<TestSuiteSummary> {
     }
   });
 
+  // 10. BULLISH / BEARISH SENTIMENT SCORE TESTS
+  await runTest('sentiment-scoring-scenarios', 'News Intelligence & Scoring', 'Bullish/Bearish sentiment scoring across real-world financial scenarios', () => {
+    const extremelyBullish = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Apple Beats Q4 Earnings Estimates by 35% and Raises Full-Year Guidance on Record Revenue Surge',
+      summary: 'Apple reported phenomenal quarterly profits and raised outlook significantly.',
+      eventType: 'earnings',
+    });
+    if (extremelyBullish.score < 76) {
+      throw new Error(`Expected extremely/strongly bullish score (>=76), got ${extremelyBullish.score}`);
+    }
+
+    const stronglyBullish = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'FDA Approves Breakthrough Oncology Drug for Immediate Commercial Launch',
+      summary: 'Regulatory clearance granted ahead of schedule.',
+      eventType: 'regulatory',
+    });
+    if (stronglyBullish.score < 70) {
+      throw new Error(`Expected strongly bullish score for FDA approval (>=70), got ${stronglyBullish.score}`);
+    }
+
+    const neutralNews = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Company Announces Date for Annual General Shareholder Meeting',
+      summary: 'The annual meeting will be held virtually next month.',
+      eventType: 'other',
+    });
+    if (neutralNews.score !== 50) {
+      throw new Error(`Expected neutral score of 50, got ${neutralNews.score}`);
+    }
+
+    const bearishNews = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Analyst Downgrades Stock to Sell Following Weak Sector Outlook',
+      summary: 'Rating downgraded due to tightening margins.',
+      eventType: 'analyst_rating',
+    });
+    if (bearishNews.score > 45) {
+      throw new Error(`Expected bearish score (<=45), got ${bearishNews.score}`);
+    }
+
+    const extremelyBearish = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Company Files for Chapter 11 Bankruptcy and Faces SEC Accounting Fraud Probe',
+      summary: 'Insolvent operations collapse under mounting liabilities and federal charges.',
+      eventType: 'legal',
+    });
+    if (extremelyBearish.score > 15) {
+      throw new Error(`Expected extremely bearish score (<=15), got ${extremelyBearish.score}`);
+    }
+
+    const highImpBearish = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'DOJ Imposes Record $2B Antitrust Penalty and Slashes Operating Licenses',
+      summary: 'Massive regulatory enforcement action penalizes company.',
+      eventType: 'regulatory',
+    });
+    if (highImpBearish.score > 35) {
+      throw new Error(`Expected bearish sentiment for regulatory penalty, got ${highImpBearish.score}`);
+    }
+
+    const lowImpBullish = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Director Purchases $50,000 in Open Market Stock',
+      summary: 'Small insider share purchase reported in regulatory filing.',
+      eventType: 'insider',
+    });
+    if (lowImpBullish.score <= 50) {
+      throw new Error(`Expected bullish sentiment for insider buying (>50), got ${lowImpBullish.score}`);
+    }
+
+    const maSuccess = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Company Announces Strategic Acquisition to Expand Cloud Dominance',
+      summary: 'Merger agreement signed with strong synergies.',
+      eventType: 'acquisition',
+    });
+    const maFailed = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Proposed $15B Merger Called Off After Antitrust Regulators Block Deal',
+      summary: 'Acquisition fails as regulatory hurdles prove insurmountable.',
+      eventType: 'acquisition',
+    });
+    if (maSuccess.score <= maFailed.score) {
+      throw new Error('Successful M&A sentiment should exceed failed M&A sentiment');
+    }
+
+    const earningsBeat = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Q3 Earnings Beat Expectations by 20%',
+      summary: 'Quarterly beat driven by high demand.',
+      eventType: 'earnings',
+    });
+    const earningsMiss = NewsIntelligenceEngine.calculateSentimentScore({
+      headline: 'Q3 Earnings Miss Estimates as Revenue Drops Sharply',
+      summary: 'Quarterly miss and profit drop reported.',
+      eventType: 'earnings',
+    });
+    if (earningsBeat.score <= earningsMiss.score) {
+      throw new Error('Earnings beat sentiment should exceed earnings miss sentiment');
+    }
+  });
+
+  await runTest('sentiment-representative-dataset', 'News Intelligence & Scoring', 'Verify representative test set for bullish, bearish, neutral, mixed, high/low importance articles', () => {
+    const testCases = [
+      {
+        id: 'TC-01',
+        title: 'Rocket Lab, Amazon Win Space Force Contracts. SpaceX Closes Cursor Deal.',
+        summary: 'Major defense and space contract win awarded by Space Force.',
+        eventType: 'contract' as const,
+        expectedCategory: 'BULLISH',
+      },
+      {
+        id: 'TC-02',
+        title: 'Applied Optoelectronics Could Be 93% Overvalued As Revenue Hopes Fade',
+        summary: 'Severe overvaluation warning and law suits filed by investors.',
+        eventType: 'legal' as const,
+        expectedCategory: 'BEARISH',
+      },
+      {
+        id: 'TC-03',
+        title: 'Pershing Square Holdings Ltd Quarterly Financial Update Released',
+        summary: 'Routine financial update and routine portfolio disclosures.',
+        eventType: 'other' as const,
+        expectedCategory: 'NEUTRAL',
+      },
+      {
+        id: 'TC-04',
+        title: 'Druckenmiller loads up on Amazon while dumping chipmakers',
+        summary: 'Institutional investor buys Amazon stock but sells chipmaker holdings.',
+        eventType: 'insider' as const,
+        expectedCategory: 'NEUTRAL',
+      },
+      {
+        id: 'TC-05',
+        title: 'DOJ Files $10B Antitrust Lawsuit to Block Major Tech Merger',
+        summary: 'Breaking DOJ regulatory enforcement action threatens corporate collapse.',
+        eventType: 'regulatory' as const,
+        expectedCategory: 'BEARISH',
+      },
+      {
+        id: 'TC-06',
+        title: 'NVIDIA Beats Earnings Estimates with Record $30B Revenue and Raises Guidance',
+        summary: 'Massive quarterly earnings beat and raised full-year outlook.',
+        eventType: 'earnings' as const,
+        expectedCategory: 'BULLISH',
+      },
+    ];
+
+    for (const tc of testCases) {
+      const res = NewsIntelligenceEngine.calculateSentimentScore({
+        headline: tc.title,
+        summary: tc.summary,
+        eventType: tc.eventType,
+      });
+
+      if (tc.expectedCategory === 'BULLISH' && res.score <= 50) {
+        throw new Error(`Test ${tc.id} expected BULLISH (>50), got ${res.score}`);
+      }
+      if (tc.expectedCategory === 'BEARISH' && res.score >= 50) {
+        throw new Error(`Test ${tc.id} expected BEARISH (<50), got ${res.score}`);
+      }
+      if (tc.expectedCategory === 'NEUTRAL' && (res.score < 45 || res.score > 55)) {
+        throw new Error(`Test ${tc.id} expected NEUTRAL (~50), got ${res.score}`);
+      }
+    }
+  });
+
+  await runTest('TEST-SENTIMENT-01', 'Filtering & Pipeline', 'Sentiment Filtering & Pagination Verification', async () => {
+    const db = await getDb();
+    db.exec(`DELETE FROM ticker_news WHERE ticker_id IN (SELECT id FROM tickers WHERE symbol = 'SENT_TEST_TICKER')`);
+    db.exec(`DELETE FROM tickers WHERE symbol = 'SENT_TEST_TICKER'`);
+    db.exec(`DELETE FROM news WHERE url LIKE 'http://sentiment-test.com/%'`);
+
+    // Create isolated ticker for sentiment test
+    const testTicker = await createTicker({ symbol: 'SENT_TEST_TICKER', company_name: 'Sentiment Test Corp', enabled: true });
+
+    const insertNews = (title: string, score: number, importance = 80, urlSuffix: string) => {
+      const hash = `hash_sent_${urlSuffix}_${Date.now()}_${Math.random().toString(36).substring(2)}`;
+      const url = `http://sentiment-test.com/${urlSuffix}`;
+      const now = new Date().toISOString();
+      const stmt = db.prepare(`
+        INSERT INTO news (title, publisher, url, published_at, summary, article_hash, retrieved_at, created_at)
+        VALUES ($title, 'TestPublisher', $url, $now, 'Summary text', $hash, $now, $now)
+      `);
+      stmt.run({ $title: title, $url: url, $now: now, $hash: hash });
+      stmt.free();
+
+      const nStmt = db.prepare(`SELECT id FROM news WHERE article_hash = $hash`);
+      nStmt.bind({ $hash: hash });
+      nStmt.step();
+      const nId = Number(nStmt.getAsObject().id);
+      nStmt.free();
+
+      const tStmt = db.prepare(`INSERT INTO ticker_news (ticker_id, news_id) VALUES ($tId, $nId)`);
+      tStmt.run({ $tId: testTicker.id, $nId: nId });
+      tStmt.free();
+
+      const aStmt = db.prepare(`
+        INSERT INTO news_analysis (news_id, importance_score, relevance_score, sentiment_score, event_type, source_tier, explanation_json, classification_version, classified_at)
+        VALUES ($nId, $importance, 80, $score, 'general', 1, '{}', 'v2.0-rules', $now)
+      `);
+      aStmt.run({ $nId: nId, $importance: importance, $score: score, $now: now });
+      aStmt.free();
+
+      return nId;
+    };
+
+    insertNews('Article Score 1 Bearish', 1, 80, 's1');
+    insertNews('Article Score 49 Bearish', 49, 80, 's49');
+    insertNews('Article Score 50 Neutral', 50, 80, 's50');
+    insertNews('Article Score 51 Bullish', 51, 80, 's51');
+    insertNews('Article Score 100 Bullish', 100, 80, 's100');
+
+    // 1. Bullish filter excludes 50, excludes 49, includes 51, includes 100
+    const bullishRes = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'bullish', limit: 100 });
+    const bullishScores = bullishRes.articles.map((a) => a.sentiment_score);
+    if (bullishScores.includes(50)) throw new Error('Bullish filter incorrectly included sentiment_score 50');
+    if (bullishScores.includes(49)) throw new Error('Bullish filter incorrectly included sentiment_score 49');
+    if (!bullishScores.includes(51)) throw new Error('Bullish filter failed to include sentiment_score 51');
+    if (!bullishScores.includes(100)) throw new Error('Bullish filter failed to include sentiment_score 100');
+    if (bullishRes.articles.some((a) => (a.sentiment_score ?? 50) < 51)) throw new Error('Bullish filter returned article with sentiment_score < 51');
+
+    // 2. Bearish filter includes 1, includes 49, excludes 50, excludes 51
+    const bearishRes = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'bearish', limit: 100 });
+    const bearishScores = bearishRes.articles.map((a) => a.sentiment_score);
+    if (!bearishScores.includes(1)) throw new Error('Bearish filter failed to include sentiment_score 1');
+    if (!bearishScores.includes(49)) throw new Error('Bearish filter failed to include sentiment_score 49');
+    if (bearishScores.includes(50)) throw new Error('Bearish filter incorrectly included sentiment_score 50');
+    if (bearishScores.includes(51)) throw new Error('Bearish filter incorrectly included sentiment_score 51');
+    if (bearishRes.articles.some((a) => (a.sentiment_score ?? 50) > 49)) throw new Error('Bearish filter returned article with sentiment_score > 49');
+
+    // 3. Neutral filter includes exactly 50, excludes 49, excludes 51
+    const neutralRes = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'neutral', limit: 100 });
+    const neutralScores = neutralRes.articles.map((a) => a.sentiment_score);
+    if (!neutralScores.includes(50)) throw new Error('Neutral filter failed to include sentiment_score 50');
+    if (neutralScores.includes(49)) throw new Error('Neutral filter incorrectly included sentiment_score 49');
+    if (neutralScores.includes(51)) throw new Error('Neutral filter incorrectly included sentiment_score 51');
+    if (neutralRes.articles.some((a) => (a.sentiment_score ?? 50) !== 50)) throw new Error('Neutral filter returned article with sentiment_score !== 50');
+
+    // 4. All filter returns all 5 test articles
+    const allRes = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'all', limit: 100 });
+    if (allRes.articles.length !== 5) throw new Error(`Expected 5 total test articles, got ${allRes.articles.length}`);
+
+    // 5. Pagination occurs AFTER sentiment filtering
+    const page1Bullish = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'bullish', page: 1, limit: 1 });
+    if (page1Bullish.total !== 2) throw new Error(`Expected total 2 bullish articles across pagination, got total=${page1Bullish.total}`);
+    if (page1Bullish.totalPages !== 2) throw new Error(`Expected totalPages 2, got totalPages=${page1Bullish.totalPages}`);
+
+    // 6. Importance + sentiment filtering together
+    const highImpBullish = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'bullish', importance: 'high', limit: 100 });
+    if (highImpBullish.articles.length !== 2) throw new Error(`Expected 2 high-importance bullish articles, got ${highImpBullish.articles.length}`);
+
+    // 7. Search + sentiment filtering together
+    const searchBullish = await getNews({ ticker: 'SENT_TEST_TICKER', sentiment: 'bullish', search: '100', limit: 100 });
+    if (searchBullish.articles.length !== 1 || searchBullish.articles[0].sentiment_score !== 100) {
+      throw new Error('Search + sentiment filtering failed');
+    }
+
+    // Clean up test ticker & articles
+    db.exec(`DELETE FROM ticker_news WHERE ticker_id = ${testTicker.id}`);
+    db.exec(`DELETE FROM news WHERE url LIKE 'http://sentiment-test.com/%'`);
+    db.exec(`DELETE FROM tickers WHERE id = ${testTicker.id}`);
+  });
+
+  // -----------------------------------------------------------------
+  // Test Suite Category: Ticker Intelligence Engine Tests
+  // -----------------------------------------------------------------
+  await runTest('TEST-TI-01', 'News Intelligence & Scoring', 'Period & Ticker Filtering and Weighted Scoring', async () => {
+    const db = await getDb();
+    
+    // Clean up existing test ticker if present
+    db.exec(`DELETE FROM ticker_news WHERE ticker_id IN (SELECT id FROM tickers WHERE symbol = 'TI_TEST')`);
+    db.exec(`DELETE FROM tickers WHERE symbol = 'TI_TEST'`);
+
+    // Create test ticker via createTicker helper
+    const tickerObj = await createTicker({ symbol: 'TI_TEST', company_name: 'TI Test Corp', exchange: 'NASDAQ', enabled: true });
+    if (!tickerObj) throw new Error('Failed to create TI_TEST ticker');
+
+    const now = new Date();
+    const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000).toISOString();
+    const tenDaysAgo = new Date(now.getTime() - 10 * 24 * 60 * 60 * 1000).toISOString();
+
+    // Insert 1 article 2 days ago (Bullish score 80)
+    const url1 = 'http://ti-test.com/1';
+    db.run(`INSERT INTO news (url, title, publisher, published_at, retrieved_at, created_at, article_hash) VALUES ('${url1}', 'TI Bullish News', 'Reuters', '${twoDaysAgo}', '${twoDaysAgo}', '${twoDaysAgo}', 'tihash1')`);
+    const n1 = db.exec(`SELECT id FROM news WHERE article_hash = 'tihash1'`)[0].values[0][0] as number;
+    db.run(`INSERT INTO ticker_news (ticker_id, news_id) VALUES (${tickerObj.id}, ${n1})`);
+    db.run(`INSERT INTO news_analysis (news_id, importance_score, relevance_score, sentiment_score, event_type, source_tier, explanation_json, classification_version, classified_at) VALUES (${n1}, 90, 90, 80, 'earnings', 1, '{}', 'v2.0-rules', '${twoDaysAgo}')`);
+
+    // Insert 1 article 10 days ago (Bearish score 20)
+    const url2 = 'http://ti-test.com/2';
+    db.run(`INSERT INTO news (url, title, publisher, published_at, retrieved_at, created_at, article_hash) VALUES ('${url2}', 'TI Bearish News Old', 'Bloomberg', '${tenDaysAgo}', '${tenDaysAgo}', '${tenDaysAgo}', 'tihash2')`);
+    const n2 = db.exec(`SELECT id FROM news WHERE article_hash = 'tihash2'`)[0].values[0][0] as number;
+    db.run(`INSERT INTO ticker_news (ticker_id, news_id) VALUES (${tickerObj.id}, ${n2})`);
+    db.run(`INSERT INTO news_analysis (news_id, importance_score, relevance_score, sentiment_score, event_type, source_tier, explanation_json, classification_version, classified_at) VALUES (${n2}, 80, 80, 20, 'legal', 1, '{}', 'v2.0-rules', '${tenDaysAgo}')`);
+
+    // Test 1: 7d period should only include recent bullish article (1 article)
+    const sum7d = TickerSummaryEngine.getTickerSummaries(db, { period: '7d', symbol: 'TI_TEST' });
+    if (sum7d.length !== 1) throw new Error(`Expected 1 summary for 7d period, got ${sum7d.length}`);
+    if (sum7d[0].newsCount !== 1) throw new Error(`Expected newsCount=1 for 7d period, got ${sum7d[0].newsCount}`);
+    if (sum7d[0].overallScore !== 80) throw new Error(`Expected overallScore=80 for 7d period, got ${sum7d[0].overallScore}`);
+    if (sum7d[0].direction !== 'BULLISH') throw new Error(`Expected direction=BULLISH (score=80), got ${sum7d[0].direction}`);
+
+    // Test 2: 30d period should include both articles (2 articles)
+    const sum30d = TickerSummaryEngine.getTickerSummaries(db, { period: '30d', symbol: 'TI_TEST' });
+    if (sum30d.length !== 1) throw new Error(`Expected 1 summary for 30d period, got ${sum30d.length}`);
+    if (sum30d[0].newsCount !== 2) throw new Error(`Expected newsCount=2 for 30d period, got ${sum30d[0].newsCount}`);
+    if (sum30d[0].overallScore === 50) throw new Error('Overall score should be calculated weighted score, not default 50');
+
+    // Test 3: All Tickers selection returns summaries for all tickers with news
+    const sumAll = TickerSummaryEngine.getTickerSummaries(db, { period: '30d', symbol: 'ALL' });
+    if (sumAll.length < 1) throw new Error('All tickers search returned no summaries');
+    if (!sumAll.some((s) => s.symbol === 'TI_TEST')) throw new Error('All tickers search missing TI_TEST');
+
+    // Test 4: Quota Safety Estimation
+    const estimate = TickerSummaryEngine.getAIEstimate(db, { period: '7d', symbol: 'TI_TEST' });
+    if (estimate.estimatedRequests !== 1) throw new Error(`Expected 1 estimated request for uncached ticker, got ${estimate.estimatedRequests}`);
+
+    // Clean up test data
+    db.exec(`DELETE FROM news_analysis WHERE news_id IN (${n1}, ${n2})`);
+    db.exec(`DELETE FROM ticker_news WHERE ticker_id = ${tickerObj.id}`);
+    db.exec(`DELETE FROM news WHERE id IN (${n1}, ${n2})`);
+    db.exec(`DELETE FROM tickers WHERE id = ${tickerObj.id}`);
+  });
+
   const durationMs = Date.now() - startTime;
   const passed = results.filter((r) => r.status === 'passed').length;
   const failed = results.filter((r) => r.status === 'failed').length;
@@ -1381,4 +1703,26 @@ export async function runAllTests(): Promise<TestSuiteSummary> {
     results,
     timestamp: new Date().toISOString(),
   };
+}
+
+if (process.argv[1] && (process.argv[1].endsWith('suite.ts') || process.argv[1].endsWith('suite.js'))) {
+  runAllTests().then((summary) => {
+    console.log(`\n========================================`);
+    console.log(`TEST SUITE RESULTS (${summary.timestamp})`);
+    console.log(`Total: ${summary.total} | Passed: ${summary.passed} | Failed: ${summary.failed} (${summary.durationMs}ms)`);
+    console.log(`========================================\n`);
+    for (const r of summary.results) {
+      if (r.status === 'failed') {
+        console.error(`❌ [${r.category}] ${r.name}: ${r.message}`);
+      } else {
+        console.log(`✅ [${r.category}] ${r.name} (${r.durationMs}ms)`);
+      }
+    }
+    if (summary.failed > 0) {
+      process.exit(1);
+    }
+  }).catch((err) => {
+    console.error('Test execution failed:', err);
+    process.exit(1);
+  });
 }

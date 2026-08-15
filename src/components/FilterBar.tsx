@@ -13,11 +13,13 @@ import {
   Zap,
   Tag,
   RefreshCw,
+  TrendingUp,
 } from 'lucide-react';
 import { Ticker, ImportanceFilter, EventType } from '../types.js';
 
 export type DatePreset = 'all' | 'today' | '24h' | '7d' | '30d' | 'custom';
-export type SortOption = 'newest' | 'oldest' | 'importance' | 'relevance';
+export type SortOption = 'newest' | 'oldest' | 'importance' | 'relevance' | 'sentiment_high' | 'sentiment_low';
+export type SentimentFilter = 'all' | 'bullish' | 'bearish' | 'neutral';
 
 interface FilterBarProps {
   tickers: Ticker[];
@@ -38,6 +40,8 @@ interface FilterBarProps {
   onSelectSort: (sort: SortOption) => void;
   importanceFilter: ImportanceFilter;
   onSelectImportance: (imp: ImportanceFilter) => void;
+  sentimentFilter: SentimentFilter;
+  onSelectSentiment: (sentiment: SentimentFilter) => void;
   eventTypeFilter: string;
   onSelectEventType: (evt: string) => void;
   viewMode: 'cards' | 'table';
@@ -82,6 +86,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onSelectSort,
   importanceFilter,
   onSelectImportance,
+  sentimentFilter,
+  onSelectSentiment,
   eventTypeFilter,
   onSelectEventType,
   viewMode,
@@ -107,11 +113,11 @@ export const FilterBar: React.FC<FilterBarProps> = ({
       {/* Row 1: Tickers Scrollable Filter Pills */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-            <Building2 className="w-3.5 h-3.5 text-slate-400" />
+          <label className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
+            <Building2 className="w-3.5 h-3.5 text-slate-500" />
             <span>Filter by Ticker</span>
           </label>
-          <span className="text-xs text-slate-400">
+          <span className="text-xs text-slate-600">
             {tickers.length} tickers available
           </span>
         </div>
@@ -191,6 +197,47 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <button
                 key={item.key}
                 onClick={() => onSelectImportance(item.key)}
+                className={`px-2.5 py-1 text-xs font-medium rounded-md transition cursor-pointer flex items-center gap-1 border ${
+                  isSelected
+                    ? 'bg-slate-900 text-white border-slate-900 shadow-2xs font-semibold'
+                    : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                <span>{item.label}</span>
+                {item.badge && (
+                  <span
+                    className={`text-[9px] px-1 py-0.2 rounded font-mono ${
+                      isSelected ? 'bg-slate-700 text-white' : item.color || 'bg-slate-100 text-slate-600'
+                    }`}
+                  >
+                    {item.badge}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Sentiment Filter Pills */}
+        <div className="flex items-center gap-1.5 flex-wrap pt-1">
+          <span className="text-xs font-semibold text-slate-600 flex items-center gap-1 mr-1">
+            <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Sentiment:</span>
+          </span>
+
+          {(
+            [
+              { key: 'all', label: 'All', badge: '' },
+              { key: 'bullish', label: 'Bullish', badge: '≥51', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
+              { key: 'bearish', label: 'Bearish', badge: '≤49', color: 'text-rose-700 bg-rose-50 border-rose-200' },
+              { key: 'neutral', label: 'Neutral', badge: '50', color: 'text-amber-700 bg-amber-50 border-amber-200' },
+            ] as Array<{ key: SentimentFilter; label: string; badge?: string; color?: string }>
+          ).map((item) => {
+            const isSelected = sentimentFilter === item.key;
+            return (
+              <button
+                key={item.key}
+                onClick={() => onSelectSentiment(item.key)}
                 className={`px-2.5 py-1 text-xs font-medium rounded-md transition cursor-pointer flex items-center gap-1 border ${
                   isSelected
                     ? 'bg-slate-900 text-white border-slate-900 shadow-2xs font-semibold'
@@ -326,6 +373,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <option value="oldest">Sort: Oldest First</option>
               <option value="importance">Sort: Highest Importance</option>
               <option value="relevance">Sort: Highest Relevance</option>
+              <option value="sentiment_high">Sort: Highest Sentiment (Bullish First)</option>
+              <option value="sentiment_low">Sort: Lowest Sentiment (Bearish First)</option>
             </select>
             <ChevronDown className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>

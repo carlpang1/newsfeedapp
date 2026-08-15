@@ -61,7 +61,7 @@ export const NewsTable: React.FC<NewsTableProps> = ({
           <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider">
             <tr>
               <th className="py-3 px-4 w-28">Date</th>
-              <th className="py-3 px-3 w-24 text-center">Score</th>
+              <th className="py-3 px-3 w-36 text-center">Scores</th>
               <th className="py-3 px-3 w-28">Event</th>
               <th className="py-3 px-4 w-28">Tickers</th>
               <th className="py-3 px-4 w-36">Source</th>
@@ -82,19 +82,39 @@ export const NewsTable: React.FC<NewsTableProps> = ({
                     {formatDate(article.published_at)}
                   </td>
 
-                  {/* Importance Score */}
+                  {/* Importance & Sentiment Scores */}
                   <td className="py-3 px-3 align-top text-center">
-                    {article.importance_score !== undefined ? (
-                      <span
-                        className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[11px] font-mono font-bold border ${imp.color}`}
-                        title={`Importance Score: ${article.importance_score}/100 (${imp.label})`}
-                      >
-                        <Zap className="w-2.5 h-2.5 text-current" />
-                        <span>{article.importance_score}</span>
-                      </span>
-                    ) : (
-                      <span className="text-slate-400">—</span>
-                    )}
+                    <div className="flex flex-col items-center gap-1">
+                      {article.importance_score !== undefined && (
+                        <span
+                          className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border ${imp.color}`}
+                          title={`Importance Score: ${article.importance_score}/100 (${imp.label})`}
+                        >
+                          <Zap className="w-2.5 h-2.5 text-current" />
+                          <span>{article.importance_score} Imp</span>
+                        </span>
+                      )}
+                      {article.sentiment_score !== undefined && (() => {
+                        const s = article.sentiment_score;
+                        const isBull = s > 50;
+                        const isBear = s < 50;
+                        const label = isBull ? 'BULL' : isBear ? 'BEAR' : 'NEUT';
+                        const sym = isBull ? '▲' : isBear ? '▼' : '—';
+                        const cls = isBull
+                          ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                          : isBear
+                          ? 'bg-rose-50 text-rose-800 border-rose-200'
+                          : 'bg-amber-50 text-amber-800 border-amber-200';
+                        return (
+                          <span
+                            className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border ${cls}`}
+                            title={`Sentiment Score: ${s}/100 (${isBull ? 'BULLISH' : isBear ? 'BEARISH' : 'NEUTRAL'})`}
+                          >
+                            <span>{sym} {s} {label}</span>
+                          </span>
+                        );
+                      })()}
+                    </div>
                   </td>
 
                   {/* Event Type */}

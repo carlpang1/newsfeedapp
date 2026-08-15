@@ -40,6 +40,7 @@ import {
   getProviderHealth,
 } from './server/services/newsProvider.js';
 import { logger } from './server/services/logger.js';
+import { TickerSummaryEngine } from './server/services/tickerSummary.js';
 import { runAllTests } from './server/tests/suite.js';
 
 async function startServer() {
@@ -64,6 +65,16 @@ async function startServer() {
   // Health check
   app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  });
+
+  // Download production ZIP package
+  app.get('/api/download-zip', (req, res) => {
+    const zipPath = path.resolve(process.cwd(), 'newsfeedapp_production_source.zip');
+    if (fs.existsSync(zipPath)) {
+      res.download(zipPath, 'newsfeedapp_production_source.zip');
+    } else {
+      res.status(404).json({ error: 'ZIP file not found on server.' });
+    }
   });
 
   // Tickers Endpoints
@@ -198,8 +209,9 @@ async function startServer() {
       const endDate = req.query.endDate ? String(req.query.endDate) : undefined;
       const source = req.query.source ? String(req.query.source) : undefined;
       const search = req.query.search ? String(req.query.search) : undefined;
-      const sort = (req.query.sort as 'newest' | 'oldest' | 'importance' | 'relevance') || 'newest';
+      const sort = (req.query.sort as 'newest' | 'oldest' | 'importance' | 'relevance' | 'sentiment_high' | 'sentiment_low') || 'newest';
       const importance = (req.query.importance as 'all' | 'critical' | 'high' | 'medium' | 'low') || 'all';
+      const sentiment = (req.query.sentiment as 'all' | 'bullish' | 'bearish' | 'neutral') || 'all';
       const eventType = req.query.eventType ? String(req.query.eventType) : undefined;
       const page = req.query.page ? parseInt(String(req.query.page), 10) : 1;
       const limit = req.query.limit ? parseInt(String(req.query.limit), 10) : 20;
@@ -213,6 +225,7 @@ async function startServer() {
         search,
         sort,
         importance,
+        sentiment,
         eventType,
         page,
         limit,
@@ -397,6 +410,77 @@ async function startServer() {
       res.json(result);
     } catch (err: any) {
       logger.error(`POST /api/ai/batch-analyze error: ${err.message}`);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // -------------------------------------------------------------
+  // Ticker Intelligence Page Endpoints (Simplified Report)
+  // -------------------------------------------------------------
+  app.get('/api/ticker-summary', async (req, res) => {
+    try {
+      const db = await getDb();
+      const period = (req.query.period as any) || '7d';
+      const startDate = req.query.startDate ? String(req.query.startDate) : undefined;
+      const endDate = req.query.endDate ? String(req.query.endDate) : undefined;
+      const symbol = req.query.symbol ? String(req.query.symbol) : undefined;
+      const sort = (req.query.sort as any) || 'highest_score';
+
+      const results = TickerSummaryEngine.getTickerSummaries(db, {
+        period,
+        startDate,
+        endDate,
+        symbol,
+        sort,
+      });
+
+      res.json({ summaries: results, count: results.length });
+    } catch (err: any) {
+      logger.error(`GET /api/ticker-summary error: ${err.message}`);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.get('/api/ticker-summary/estimate-ai', async (req, res) => {
+    try {
+      const db = await getDb();
+      const period = (req.query.period as any) || '7d';
+      const startDate = req.query.startDate ? String(req.query.startDate) : undefined;
+      const endDate = req.query.endDate ? String(req.query.endDate) : undefined;
+      const symbol = req.query.symbol ? String(req.query.symbol) : undefined;
+
+      const estimate = TickerSummaryEngine.getAIEstimate(db, {
+        period,
+        startDate,
+        endDate,
+        symbol,
+      });
+
+      res.json(estimate);
+    } catch (err: any) {
+      logger.error(`GET /api/ticker-summary/estimate-ai error: ${err.message}`);
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.post('/api/ticker-summary/generate-ai', async (req, res) => {
+    try {
+      const db = await getDb();
+      const period = (req.body.period as any) || '7d';
+      const startDate = req.body.startDate ? String(req.body.startDate) : undefined;
+      const endDate = req.body.endDate ? String(req.body.endDate) : undefined;
+      const symbols = Array.isArray(req.body.symbols) ? req.body.symbols.map(String) : undefined;
+
+      const result = await TickerSummaryEngine.generateAISummaries(db, {
+        period,
+        startDate,
+        endDate,
+        symbols,
+      });
+
+      res.json(result);
+    } catch (err: any) {
+      logger.error(`POST /api/ticker-summary/generate-ai error: ${err.message}`);
       res.status(500).json({ error: err.message });
     }
   });

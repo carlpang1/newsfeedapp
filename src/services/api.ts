@@ -10,6 +10,8 @@ import {
   ProviderHealth,
 } from '../types.js';
 
+export type { Ticker, NewsArticle, GlobalStats, AppConfig, ProviderHealth };
+
 export async function fetchTickers(options?: { search?: string; enabledOnly?: boolean }): Promise<Ticker[]> {
   const params = new URLSearchParams();
   if (options?.search) params.append('search', options.search);
@@ -105,8 +107,9 @@ export async function fetchNews(options?: {
   endDate?: string;
   source?: string;
   search?: string;
-  sort?: 'newest' | 'oldest' | 'importance' | 'relevance';
+  sort?: 'newest' | 'oldest' | 'importance' | 'relevance' | 'sentiment_high' | 'sentiment_low';
   importance?: 'all' | 'critical' | 'high' | 'medium' | 'low';
+  sentiment?: 'all' | 'bullish' | 'bearish' | 'neutral';
   eventType?: string;
   page?: number;
   limit?: number;
@@ -126,6 +129,7 @@ export async function fetchNews(options?: {
   if (options?.search) params.append('search', options.search);
   if (options?.sort) params.append('sort', options.sort);
   if (options?.importance && options.importance !== 'all') params.append('importance', options.importance);
+  if (options?.sentiment && options.sentiment !== 'all') params.append('sentiment', options.sentiment);
   if (options?.eventType && options.eventType !== 'ALL') params.append('eventType', options.eventType);
   if (options?.page) params.append('page', String(options.page));
   if (options?.limit) params.append('limit', String(options.limit));
@@ -235,4 +239,101 @@ export async function runTestSuite(): Promise<TestSuiteSummary> {
 export async function resetDatabase(): Promise<void> {
   const res = await fetch('/api/database/reset', { method: 'POST' });
   if (!res.ok) throw new Error('Failed to reset database');
+}
+
+export interface TickerSummaryItem {
+  tickerId: number;
+  symbol: string;
+  companyName: string;
+  exchange: string;
+  newsCount: number;
+  overallScore: number;
+  direction: 'BULLISH' | 'BEARISH' | 'NEUTRAL';
+  directionLabel: string;
+  topHeadlines: Array<{
+    id: number;
+    title: string;
+    publishedAt: string;
+    publisher: string;
+    importanceScore: number;
+    sentimentScore: number;
+    eventType: string;
+  }>;
+  deterministicSignals: {
+    bullishPoints: string[];
+    bearishPoints: string[];
+  };
+  aiSummary?: {
+    overallSummary: string;
+    keyBullish: string[];
+    keyBearish: string[];
+    mainCatalyst?: string;
+    mainRisk?: string;
+    insufficientEvidence: boolean;
+    cachedAt: string;
+  };
+  newsHashSig: string;
+  hasCachedAI: boolean;
+}
+
+export interface AIEstimate {
+  period: string;
+  tickersNeedingAI: number;
+  estimatedRequests: number;
+  estimatedTokens: number;
+  estimatedCostUsd: number;
+  cachedTickersCount: number;
+  totalApplicableTickers: number;
+}
+
+export async function fetchTickerSummaries(options: {
+  period?: string;
+  startDate?: string;
+  endDate?: string;
+  symbol?: string;
+  sort?: string;
+}): Promise<{ summaries: TickerSummaryItem[]; count: number }> {
+  const params = new URLSearchParams();
+  if (options.period) params.append('period', options.period);
+  if (options.startDate) params.append('startDate', options.startDate);
+  if (options.endDate) params.append('endDate', options.endDate);
+  if (options.symbol && options.symbol !== 'ALL') params.append('symbol', options.symbol);
+  if (options.sort) params.append('sort', options.sort);
+
+  const res = await fetch(`/api/ticker-summary?${params.toString()}`);
+  if (!res.ok) throw new Error('Failed to fetch ticker summaries');
+  return await res.json();
+}
+
+export async function estimateTickerAISummaries(options: {
+  period?: string;
+  startDate?: string;
+  endDate?: string;
+  symbol?: string;
+}): Promise<AIEstimate> {
+  const params = new URLSearchParams();
+  if (options.period) params.append('period', options.period);
+  if (options.startDate) params.append('startDate', options.startDate);
+  if (options.endDate) params.append('endDate', options.endDate);
+  if (options.symbol && options.symbol !== 'ALL') params.append('symbol', options.symbol);
+
+  const res = await fetch(`/api/ticker-summary/estimate-ai?${params.toString()}`);
+  if (!res.ok) throw new Error('Failed to fetch AI estimate');
+  return await res.json();
+}
+
+export async function generateTickerAISummaries(options: {
+  period?: string;
+  startDate?: string;
+  endDate?: string;
+  symbols?: string[];
+}): Promise<{ generatedCount: number; cachedCount: number; results: TickerSummaryItem[] }> {
+  const res = await fetch('/api/ticker-summary/generate-ai', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(options),
+  });
+  const json = await res.json();
+  if (!res.ok) throw new Error(json.error || 'Failed to generate AI summaries');
+  return json;
 }

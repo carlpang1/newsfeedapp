@@ -87,6 +87,32 @@ export const NewsCard: React.FC<NewsCardProps> = ({
     };
   };
 
+  const getSentimentDisplay = (score: number) => {
+    const s = score !== undefined ? score : 50;
+    if (s < 50) {
+      return {
+        direction: 'BEARISH',
+        label: `${s} BEARISH`,
+        symbol: '▼',
+        badgeClass: 'bg-rose-50 text-rose-800 border-rose-200 font-semibold',
+      };
+    }
+    if (s > 50) {
+      return {
+        direction: 'BULLISH',
+        label: `${s} BULLISH`,
+        symbol: '▲',
+        badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold',
+      };
+    }
+    return {
+      direction: 'NEUTRAL',
+      label: '50 NEUTRAL',
+      symbol: '—',
+      badgeClass: 'bg-amber-50 text-amber-800 border-amber-200 font-medium',
+    };
+  };
+
   const getEventBadge = (eventType?: string) => {
     switch (eventType) {
       case 'earnings':
@@ -273,8 +299,22 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             ) : null}
           </div>
 
-          {/* Importance & Relevance Score Pill */}
-          <div className="flex items-center gap-1.5">
+          {/* Importance, Relevance & Sentiment Score Pills */}
+          <div className="flex items-center gap-1.5 flex-wrap justify-end">
+            {article.sentiment_score !== undefined && (() => {
+              const disp = getSentimentDisplay(article.sentiment_score);
+              return (
+                <div
+                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] border cursor-pointer ${disp.badgeClass}`}
+                  onClick={() => onOpenPreview(article)}
+                  title={`Sentiment Score: ${article.sentiment_score}/100 (${disp.direction}) [${ai ? 'AI ANALYSIS / Gemini' : 'RULE ENGINE v2.0'}]`}
+                >
+                  <span className="font-bold text-xs">{disp.symbol}</span>
+                  <span className="font-mono font-bold">{disp.label}</span>
+                </div>
+              );
+            })()}
+
             {article.importance_score !== undefined && (
               <div
                 className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] border cursor-pointer ${impBadge.badgeClass}`}

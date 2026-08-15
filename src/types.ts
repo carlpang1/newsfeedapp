@@ -66,6 +66,7 @@ export interface NewsArticle {
   tickers?: string[];
   importance_score?: number;
   relevance_score?: number;
+  sentiment_score?: number;
   event_type?: EventType | string;
   source_tier?: number;
   duplicate_group_id?: string;

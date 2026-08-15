@@ -36,6 +36,11 @@ export interface ScoreExplanation {
     total: number;
     breakdown: ScoreSignalBreakdown[];
   };
+  sentiment: {
+    total: number;
+    base?: number;
+    breakdown: ScoreSignalBreakdown[];
+  };
   eventType: EventType;
   sourceTier: SourceTier;
   signalsMatched: string[];
@@ -44,6 +49,7 @@ export interface ScoreExplanation {
 export interface NewsAnalysisResult {
   importanceScore: number; // 0 - 100
   relevanceScore: number;  // 0 - 100
+  sentimentScore: number;  // 1 - 100
   eventType: EventType;
   sourceTier: SourceTier;
   duplicateGroupId: string;
@@ -147,10 +153,11 @@ export class NewsIntelligenceEngine {
     // 2. Earnings & Financial Results
     if (
       /\b(reports?\s+(quarterly|q[1-4]|fourth-quarter|third-quarter|second-quarter|first-quarter|annual|fiscal)\s+earnings)\b/i.test(titleLower) ||
-      /\b(quarterly\s+earnings|q[1-4]\s+earnings|earnings\s+(beat|miss|tops?|falls?|surges?|plunges?))\b/i.test(titleLower) ||
-      /\b(beats?\s+(earnings\s+)?estimates|misses\s+(earnings\s+)?estimates|eps\s+of\s+\$|net\s+income\s+(rises|falls|jumps|plunges|up|down))\b/i.test(titleLower) ||
+      /\b(quarterly\s+earnings|q[1-4]\s+earnings|earnings\s+(beat|beats|beating|miss|misses|tops?|topping|falls?|surges?|plunges?))\b/i.test(titleLower) ||
+      /\b(beats?|beating|tops?|topping|exceeds?|exceeding|misses?)\s+(earnings\s+|wall\s+street\s+)?estimates\b/i.test(titleLower) ||
+      /\b(eps\s+of\s+\$|net\s+income\s+(rises|falls|jumps|plunges|up|down)|revenue\s+tops?|revenue\s+beating)\b/i.test(titleLower) ||
       /\b(earnings\s+results|quarterly\s+results|q[1-4]\s+results|posts\s+q[1-4]\s+profit|posts\s+q[1-4]\s+loss)\b/i.test(titleLower) ||
-      (/\bearnings\b/i.test(titleLower) && /\b(report|quarter|results|beat|miss|profit|revenue)\b/i.test(titleLower))
+      (/\bearnings\b/i.test(titleLower) && /\b(report|quarter|results|beat|beats|beating|miss|misses|profit|revenue)\b/i.test(titleLower))
     ) {
       return 'earnings';
     }
@@ -331,21 +338,21 @@ export class NewsIntelligenceEngine {
     }
 
     // 2. High-Value Headline Signals
-    if (/\b(beats?\s+(earnings\s+)?estimates|quarterly\s+beat|tops?\s+estimates|record\s+revenue|profit\s+surge)\b/i.test(titleLower)) {
+    if (/\b(beats?|beating|tops?|topping|exceeds?|exceeding)\s+([a-z0-9-]+\s+){0,3}estimates|quarterly\s+beat|revenue\s+tops?|record\s+revenue|profit\s+surge\b/i.test(titleLower)) {
       const pts = isV2 ? 22 : 20;
       breakdown.push({ signal: 'High-value signal: Beats estimates / strong quarterly results', points: pts });
       signalsMatched.push('signal:beats_estimates');
     }
-    if (/\b(misses?\s+(earnings\s+)?estimates|quarterly\s+miss|falls?\ short|profit\s+drop|revenue\s+miss)\b/i.test(titleLower)) {
+    if (/\b(misses?|missing|falls?\ short|quarterly\s+miss|profit\s+drop|revenue\s+miss)\s+([a-z0-9-]+\s+){0,3}estimates/i.test(titleLower)) {
       const pts = isV2 ? 22 : 20;
       breakdown.push({ signal: 'High-value signal: Misses estimates / weak quarterly results', points: pts });
       signalsMatched.push('signal:misses_estimates');
     }
-    if (/\b(raises?\s+guidance|boosts?\s+outlook|ups?\s+forecast)\b/i.test(titleLower)) {
+    if (/\b(raises?|boosts?|ups?|hikes?)\s+([a-z0-9-]+\s+){0,3}(guidance|outlook|forecast)\b/i.test(titleLower)) {
       breakdown.push({ signal: 'High-value signal: Raises guidance / positive outlook', points: 20 });
       signalsMatched.push('signal:raises_guidance');
     }
-    if (/\b(cuts?\s+guidance|lowers?\s+guidance|revenue\s+warning|profit\s+warning)\b/i.test(titleLower)) {
+    if (/\b(cuts?|lowers?|slashes?)\s+([a-z0-9-]+\s+){0,3}(guidance|outlook|forecast)|revenue\s+warning|profit\s+warning\b/i.test(titleLower)) {
       breakdown.push({ signal: 'High-value signal: Cuts guidance / profit warning', points: 20 });
       signalsMatched.push('signal:cuts_guidance');
     }
@@ -466,17 +473,17 @@ export class NewsIntelligenceEngine {
     let companyInTitle = false;
 
     if (sym) {
-      const symRegex = new RegExp(`\\b(${sym}|\\$${sym}|\\(${sym}\\))\\b`, 'i');
+      const symRegex = new RegExp(`\\b(${sym}|\\${sym}|\\(${sym}\\))\\b`, 'i');
       if (symRegex.test(headline)) {
         symbolInTitle = true;
-        breakdown.push({ signal: `Ticker symbol ($${sym}) explicitly in headline`, points: 40 });
+        breakdown.push({ signal: `Ticker symbol (${sym}) explicitly in headline`, points: 50 });
       }
     }
 
     if (compNameClean && compNameClean.length >= 3) {
       if (titleLower.includes(compNameClean)) {
         companyInTitle = true;
-        breakdown.push({ signal: `Company name (${compNameClean.toUpperCase()}) in headline`, points: 40 });
+        breakdown.push({ signal: `Company name (${compNameClean.toUpperCase()}) in headline`, points: 50 });
       }
     }
 
@@ -484,7 +491,7 @@ export class NewsIntelligenceEngine {
     if (symbolInTitle || companyInTitle) {
       const words = headline.trim().split(/\s+/).slice(0, 4).join(' ').toLowerCase();
       if ((sym && words.includes(sym.toLowerCase())) || (compNameClean && words.includes(compNameClean))) {
-        breakdown.push({ signal: 'Company/symbol is primary subject of headline', points: 15 });
+        breakdown.push({ signal: 'Company/symbol is primary subject of headline', points: 20 });
       }
     }
 
@@ -568,6 +575,135 @@ export class NewsIntelligenceEngine {
   }
 
   /**
+   * Calculates the Bullish/Bearish Sentiment Score (1–100) measuring expected directional impact.
+   */
+  public static calculateSentimentScore(params: {
+    headline: string;
+    summary: string;
+    eventType: EventType;
+  }): {
+    score: number;
+    breakdown: ScoreSignalBreakdown[];
+  } {
+    const { headline, summary, eventType } = params;
+    const text = `${headline} ${summary}`.toLowerCase();
+    const breakdown: ScoreSignalBreakdown[] = [];
+
+    let score = 50; // Neutral baseline (50)
+
+    // Positive Signals
+    if (/\b(beats?\s+(earnings\s+)?estimates|quarterly\s+beat|tops?\s+estimates|record\s+revenue|record\s+profit|profit\s+surge|eps\s+beat|strong\s+q[1-4]|earnings\s+jumped?|revenue\s+rose)\b/i.test(text)) {
+      score += 25;
+      breakdown.push({ signal: 'Positive earnings beat / strong quarterly results', points: +25 });
+    }
+    if (/\b(raises?\s+(full-year\s+)?guidance|boosts?\s+(annual\s+)?outlook|ups?\s+forecast|guidance\s+raised|optimistic\s+outlook|hikes?\s+guidance)\b/i.test(text)) {
+      score += 25;
+      breakdown.push({ signal: 'Positive forward guidance raise', points: +25 });
+    }
+    if (/\b(fda\s+approves?|fda\s+approval|fda\s+clears?|regulatory\s+approval|cleared\s+by\s+regulator|wins?\s+license|granted\s+patent)\b/i.test(text)) {
+      score += 25;
+      breakdown.push({ signal: 'Favorable regulatory approval / clearance', points: +25 });
+    }
+    if (/\b(wins?\s+contract|awarded\s+contract|wins?\s+space\s+force|secures?\s+deal|major\s+contract|multi-billion\s+dollar\s+deal|contract\s+win|closes?\s+cursor\s+deal)\b/i.test(text)) {
+      score += 20;
+      breakdown.push({ signal: 'Major customer contract win', points: +20 });
+    }
+    if (/\b(revenue\s+growth|sales\s+surge|profit\s+growth|revenue\s+hopes|strong\s+demand|soaring\s+demand|double-digit\s+growth|lifts?\s+revenue)\b/i.test(text)) {
+      score += 15;
+      breakdown.push({ signal: 'Strong revenue, sales, or demand momentum', points: +15 });
+    }
+    if ((eventType === 'acquisition' || eventType === 'merger' || /\b(acquires?|acquisition\s+to\s+expand|buys\s+stake|strategic\s+acquisition|merger\s+agreement)\b/i.test(text)) && !/\b(fails?|calls?\s+off|blocked|antitrust\s+suit)\b/i.test(text)) {
+      score += 15;
+      breakdown.push({ signal: 'Strategic corporate acquisition / M&A expansion', points: +15 });
+    }
+    if (/\b(dividend\s+hike|raises?\s+dividend|share\s+buyback|stock\s+buyback|repurchase\s+program|paid\s+shareholders)\b/i.test(text)) {
+      score += 15;
+      breakdown.push({ signal: 'Capital return / dividend hike, buyback, or payout', points: +15 });
+    }
+    if (/\b(upgraded?\s+to\s+buy|analyst\s+upgrade|rating\s+upgrade|pt\s+raised|price\s+target\s+(raised|boosted|increased)|initiates?\s+with\s+buy)\b/i.test(text)) {
+      score += 15;
+      breakdown.push({ signal: 'Analyst rating upgrade or price target hike', points: +15 });
+    }
+    if (/\b(insider\s+(buying|purchase|purchases)|director\s+(buys|purchases)|stake\s+purchase|loads?\s+up\s+on|buys?\s+shares|accumulates?\s+stock)\b/i.test(text)) {
+      score += 12;
+      breakdown.push({ signal: 'Insider stock purchase or high-conviction institutional loading', points: +12 });
+    }
+    if (/\b(partners?\s+with|strategic\s+partnership|selects?\s+[a-z0-9\s-]+\s+for|adopts?\s+[a-z0-9\s-]+\s+tech|collaboration)\b/i.test(text)) {
+      score += 12;
+      breakdown.push({ signal: 'Strategic partnership or commercial adoption', points: +12 });
+    }
+    if (/\b(pays?\s+down\s+debt|debt\s+reduction|strong\s+cash\s+flow|record\s+free\s+cash|balance\s+sheet\s+strengthens)\b/i.test(text)) {
+      score += 12;
+      breakdown.push({ signal: 'Debt reduction / strong cash flow generation', points: +12 });
+    }
+    if (/\b(launches?\s+new|unveils?\s+breakthrough|next-gen\s+platform|commercial\s+rollout|product\s+expansion)\b/i.test(text)) {
+      score += 10;
+      breakdown.push({ signal: 'Product launch / innovation rollout', points: +10 });
+    }
+    if (/\b(stay\s+bullish|reasons\s+to\s+stay\s+bullish|bullish\s+case|shares?\s+(rally|soar|surge|jump|spike|climb)|better\s+buy|outperforming)\b/i.test(text)) {
+      score += 12;
+      breakdown.push({ signal: 'Bullish market commentary / outperformance indicators', points: +12 });
+    }
+
+    // Negative Signals
+    if (/\b(misses?\s+(earnings\s+)?estimates|quarterly\s+miss|falls?\s+short|profit\s+drop|profit\s+slump|revenue\s+miss|eps\s+miss|disappointing\s+results)\b/i.test(text)) {
+      score -= 30;
+      breakdown.push({ signal: 'Earnings miss / weak quarterly results', points: -30 });
+    }
+    if (/\b(cuts?\s+(full-year\s+)?guidance|lowers?\s+guidance|revenue\s+warning|profit\s+warning|guidance\s+slashed|slashes?\s+outlook)\b/i.test(text)) {
+      score -= 30;
+      breakdown.push({ signal: 'Negative forward guidance cut / warning', points: -30 });
+    }
+    if (/\b(bankruptcy|chapter\s+11|files?\s+for\s+bankruptcy|insolvent|insolvency|default\s+risk)\b/i.test(text)) {
+      score -= 45;
+      breakdown.push({ signal: 'Bankruptcy filing / insolvency risk', points: -45 });
+    }
+    if (/\b(sec\s+investigation|sec\s+probes?|sec\s+charges?|doj\s+probe|doj\s+antitrust|antitrust\s+(lawsuit|probe|ruling|penalty)|eu\s+fines|regulatory\s+penalty)\b/i.test(text)) {
+      score -= 25;
+      breakdown.push({ signal: 'Regulatory enforcement, SEC/DOJ probe or penalty', points: -25 });
+    }
+    if (/\b(lawsuit|class\s+action|overvalued|accounting\s+fraud|patent\s+dispute\s+loss|court\s+rules\s+against|sues|litigation)\b/i.test(text)) {
+      score -= 20;
+      breakdown.push({ signal: 'Adverse legal ruling, lawsuit, or overvaluation warning', points: -20 });
+    }
+    if (/\b(recalls?\s+[0-9,]+|safety\s+recall|product\s+failure|major\s+outage)\b/i.test(text)) {
+      score -= 20;
+      breakdown.push({ signal: 'Product safety recall or major operational failure', points: -20 });
+    }
+    if (/\b(layoffs|laying\s+off|workforce\s+reduction|slashes?\s+jobs|job\s+cuts)\b/i.test(text)) {
+      score -= 15;
+      breakdown.push({ signal: 'Workforce layoffs / headcount reduction', points: -15 });
+    }
+    if (/\b(downgrades?|downgraded|analyst\s+downgrades?|rating\s+downgrades?|downgrades?\s+stock|pt\s+lowered|price\s+target\s+(cut|slashed|lowered))\b/i.test(text)) {
+      score -= 15;
+      breakdown.push({ signal: 'Analyst rating downgrade or price target cut', points: -15 });
+    }
+    if (/\b(ceo\s+(resigns\s+unexpectedly|steps\s+down|ousted|fired)|cfo\s+resigns|executive\s+departure)\b/i.test(text)) {
+      score -= 15;
+      breakdown.push({ signal: 'Abrupt C-suite executive departure', points: -15 });
+    }
+    if (/\b(stock\s+(lagged|slumps|tumbles|plunges|drops|falls|slides)|weak\s+spot|dumping|shares?\s+(drop|fall|plunge|tumble|slump)|underperformed|underestimated)\b/i.test(text)) {
+      score -= 12;
+      breakdown.push({ signal: 'Stock underperformance, price slump, or institutional dumping', points: -12 });
+    }
+    if (/\b(calls?\s+off\s+merger|deal\s+blocked|merger\s+fails|acquisition\s+called\s+off)\b/i.test(text)) {
+      score -= 20;
+      breakdown.push({ signal: 'Transaction failure or cancelled deal', points: -20 });
+    }
+
+    score = Math.max(1, Math.min(100, Math.round(score)));
+
+    if (breakdown.length === 0) {
+      breakdown.push({ signal: 'Neutral market baseline', points: 0 });
+    }
+
+    return {
+      score,
+      breakdown,
+    };
+  }
+
+  /**
    * Fully analyzes an article and returns its comprehensive intelligence model.
    */
   public static analyzeArticle(
@@ -607,6 +743,12 @@ export class NewsIntelligenceEngine {
       version,
     });
 
+    const sentimentRes = this.calculateSentimentScore({
+      headline: params.headline,
+      summary: params.summary,
+      eventType,
+    });
+
     const duplicateGroupId = this.generateDuplicateGroupId(params.headline, params.publishedAt);
 
     const explanation: ScoreExplanation = {
@@ -619,6 +761,11 @@ export class NewsIntelligenceEngine {
         total: relevanceRes.score,
         breakdown: relevanceRes.breakdown,
       },
+      sentiment: {
+        total: sentimentRes.score,
+        base: 50,
+        breakdown: sentimentRes.breakdown,
+      },
       eventType,
       sourceTier,
       signalsMatched: importanceRes.signalsMatched,
@@ -627,6 +774,7 @@ export class NewsIntelligenceEngine {
     return {
       importanceScore: importanceRes.score,
       relevanceScore: relevanceRes.score,
+      sentimentScore: sentimentRes.score,
       eventType,
       sourceTier,
       duplicateGroupId,

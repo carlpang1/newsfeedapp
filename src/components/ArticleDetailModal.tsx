@@ -299,13 +299,33 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
             </div>
 
             {/* Scores Cards Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+              <div className="bg-slate-800/80 rounded-lg p-2.5 border border-slate-700/60 col-span-2 sm:col-span-1">
+                <div className="text-[10px] uppercase font-bold text-slate-400 mb-1 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3 text-emerald-400" />
+                  <span>Sentiment</span>
+                </div>
+                {(() => {
+                  const s = article.sentiment_score ?? 50;
+                  const isBull = s > 50;
+                  const isBear = s < 50;
+                  const dir = isBull ? 'BULLISH' : isBear ? 'BEARISH' : 'NEUTRAL';
+                  const sym = isBull ? '▲' : isBear ? '▼' : '—';
+                  const textColor = isBull ? 'text-emerald-400' : isBear ? 'text-rose-400' : 'text-amber-400';
+                  return (
+                    <div className={`text-sm font-bold font-mono ${textColor}`}>
+                      {sym} {s} <span className="text-[10px] uppercase font-sans tracking-wide">({dir})</span>
+                    </div>
+                  );
+                })()}
+              </div>
+
               <div className="bg-slate-800/80 rounded-lg p-2.5 border border-slate-700/60">
                 <div className="text-[10px] uppercase font-bold text-slate-400 mb-1 flex items-center gap-1">
                   <Zap className="w-3 h-3 text-amber-400" />
                   <span>Importance</span>
                 </div>
-                <div className="text-xl font-bold font-mono text-amber-400">
+                <div className="text-lg font-bold font-mono text-amber-400">
                   {article.importance_score ?? 50}
                   <span className="text-xs text-slate-400 font-normal">/100</span>
                 </div>
@@ -316,7 +336,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                   <Tag className="w-3 h-3 text-cyan-400" />
                   <span>Relevance</span>
                 </div>
-                <div className="text-xl font-bold font-mono text-cyan-400">
+                <div className="text-lg font-bold font-mono text-cyan-400">
                   {article.relevance_score ?? 100}
                   <span className="text-xs text-slate-400 font-normal">/100</span>
                 </div>
@@ -345,22 +365,48 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
 
             {/* Explanation Factor Highlights */}
             {exp && (
-              <div className="space-y-2 pt-1">
-                <div className="text-[11px] font-semibold text-slate-300">
-                  Importance Signals & Weighting:
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
-                  {exp.importance?.breakdown?.map((factor, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-slate-800/50 px-2.5 py-1 rounded border border-slate-700/40 flex items-center justify-between text-slate-300"
-                    >
-                      <span className="truncate pr-2">{factor.signal}</span>
-                      <span className="font-mono text-emerald-400 font-bold shrink-0">
-                        +{factor.points}
-                      </span>
+              <div className="space-y-3 pt-1">
+                {/* Sentiment Signals Breakdown */}
+                {exp.sentiment && (
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between text-[11px] font-semibold text-slate-300">
+                      <span>Directional Sentiment Signals & Weighting:</span>
+                      <span className="text-[10px] font-mono text-slate-400">Base: {exp.sentiment.base ?? 50} | Final: {exp.sentiment.total ?? article.sentiment_score ?? 50}</span>
                     </div>
-                  ))}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
+                      {exp.sentiment.breakdown?.map((factor, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-slate-800/50 px-2.5 py-1 rounded border border-slate-700/40 flex items-center justify-between text-slate-300"
+                        >
+                          <span className="truncate pr-2">{factor.signal}</span>
+                          <span className={`font-mono font-bold shrink-0 ${factor.points > 0 ? 'text-emerald-400' : factor.points < 0 ? 'text-rose-400' : 'text-slate-400'}`}>
+                            {factor.points > 0 ? `+${factor.points}` : factor.points}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Importance Signals Breakdown */}
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-semibold text-slate-300">
+                    Importance Signals & Weighting:
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
+                    {exp.importance?.breakdown?.map((factor, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-slate-800/50 px-2.5 py-1 rounded border border-slate-700/40 flex items-center justify-between text-slate-300"
+                      >
+                        <span className="truncate pr-2">{factor.signal}</span>
+                        <span className="font-mono text-emerald-400 font-bold shrink-0">
+                          +{factor.points}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {exp.signalsMatched && exp.signalsMatched.length > 0 && (

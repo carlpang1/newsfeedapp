@@ -53,8 +53,12 @@ import { LogsModal } from './components/LogsModal.tsx';
 import { SettingsModal } from './components/SettingsModal.tsx';
 import { CalibrationModal } from './components/CalibrationModal.tsx';
 import { AIAnalysisModal } from './components/AIAnalysisModal.tsx';
+import { TickerIntelligenceView } from './components/TickerIntelligenceView.tsx';
 
 export default function App() {
+  // Navigation tab state
+  const [activeMainTab, setActiveMainTab] = useState<'news_feed' | 'ticker_intelligence'>('ticker_intelligence');
+
   // Global Data State
   const [tickers, setTickers] = useState<Ticker[]>([]);
   const [news, setNews] = useState<NewsArticle[]>([]);
@@ -76,8 +80,9 @@ export default function App() {
   const [customEndDate, setCustomEndDate] = useState('');
   const [selectedPublisher, setSelectedPublisher] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'importance' | 'relevance' | 'sentiment_high' | 'sentiment_low'>('newest');
   const [importanceFilter, setImportanceFilter] = useState<'ALL' | 'critical' | 'high' | 'medium' | 'low'>('ALL');
+  const [sentimentFilter, setSentimentFilter] = useState<'all' | 'bullish' | 'bearish' | 'neutral'>('all');
   const [eventTypeFilter, setEventTypeFilter] = useState<string>('ALL');
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
 
@@ -166,6 +171,7 @@ export default function App() {
         search: searchQuery.trim() || undefined,
         sort: sortOrder,
         importance: importanceFilter,
+        sentiment: sentimentFilter,
         eventType: eventTypeFilter !== 'ALL' ? eventTypeFilter : undefined,
         page: currentPage,
         limit: itemsPerPage,
@@ -174,6 +180,24 @@ export default function App() {
       setNews(res.articles);
       setTotalArticles(res.total);
       setTotalPages(res.totalPages);
+
+      // Defensive verification: verify returned dataset strictly satisfies selected sentiment filter
+      if (sentimentFilter === 'bullish') {
+        const invalid = res.articles.filter((a) => (a.sentiment_score ?? 50) < 51);
+        if (invalid.length > 0) {
+          console.error(`[DEFENSIVE ASSERTION FAILED] Received ${invalid.length} non-bullish articles (score <= 50) when sentimentFilter='bullish':`, invalid);
+        }
+      } else if (sentimentFilter === 'bearish') {
+        const invalid = res.articles.filter((a) => (a.sentiment_score ?? 50) > 49);
+        if (invalid.length > 0) {
+          console.error(`[DEFENSIVE ASSERTION FAILED] Received ${invalid.length} non-bearish articles (score >= 50) when sentimentFilter='bearish':`, invalid);
+        }
+      } else if (sentimentFilter === 'neutral') {
+        const invalid = res.articles.filter((a) => (a.sentiment_score ?? 50) !== 50);
+        if (invalid.length > 0) {
+          console.error(`[DEFENSIVE ASSERTION FAILED] Received ${invalid.length} non-neutral articles when sentimentFilter='neutral':`, invalid);
+        }
+      }
     } catch (err) {
       console.error('Error fetching news:', err);
     } finally {
@@ -186,6 +210,7 @@ export default function App() {
     searchQuery,
     sortOrder,
     importanceFilter,
+    sentimentFilter,
     eventTypeFilter,
     currentPage,
     itemsPerPage,
@@ -307,6 +332,8 @@ export default function App() {
         stats={stats}
         config={config}
         health={providerHealth}
+        activeMainTab={activeMainTab}
+        onSelectMainTab={setActiveMainTab}
         onOpenFetch={() => setIsFetchModalOpen(true)}
         onOpenTickers={() => setIsTickersModalOpen(true)}
         onOpenTests={() => setIsTestsModalOpen(true)}
@@ -319,10 +346,67 @@ export default function App() {
         isRefreshing={isRefreshing}
       />
 
+      {/* Prominent Secondary Navigation Bar */}
+      <div className="bg-slate-900 text-white border-b border-slate-800 shadow-md sticky top-[65px] z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <div className="flex items-center space-x-2 py-2">
+            <button
+              id="top-nav-news-feed-tab"
+              onClick={() => setActiveMainTab('news_feed')}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer flex items-center gap-2 ${
+                activeMainTab === 'news_feed'
+                  ? 'bg-emerald-600 text-white shadow-md'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              <Database className="w-4 h-4 text-emerald-300" />
+              <span>News Feed</span>
+            </button>
+
+            <button
+              id="top-nav-ticker-intelligence-tab"
+              onClick={() => setActiveMainTab('ticker_intelligence')}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer flex items-center gap-2 ${
+                activeMainTab === 'ticker_intelligence'
+                  ? 'bg-indigo-600 text-white shadow-md'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              <TrendingUp className="w-4 h-4 text-indigo-300" />
+              <span>Ticker Intelligence</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-indigo-500/40 text-indigo-100 border border-indigo-400/30">
+                SUMMARY
+              </span>
+            </button>
+          </div>
+
+          <div className="hidden md:flex items-center text-xs text-slate-400 gap-3">
+            <span>
+              Active View:{' '}
+              <strong className="text-white font-mono">
+                {activeMainTab === 'news_feed' ? 'Aggregated Articles Feed' : 'Ticker Intelligence Summary Page'}
+              </strong>
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
-        {/* Filters and Controls */}
-        <FilterBar
+        {activeMainTab === 'ticker_intelligence' ? (
+          <TickerIntelligenceView
+            tickers={tickers}
+            selectedTicker={selectedTicker}
+            onSelectTicker={setSelectedTicker}
+            selectedPreset={selectedPreset}
+            onSelectPreset={setSelectedPreset}
+            onOpenArticlePreview={(art) => setPreviewArticle(art)}
+            onSwitchToNewsFeed={() => setActiveMainTab('news_feed')}
+          />
+        ) : (
+          <>
+            {/* Filters and Controls */}
+            <FilterBar
           tickers={tickers}
           selectedTicker={selectedTicker}
           onSelectTicker={(sym) => {
@@ -350,10 +434,18 @@ export default function App() {
             setCurrentPage(1);
           }}
           sortOrder={sortOrder}
-          onToggleSort={() => setSortOrder((prev) => (prev === 'newest' ? 'oldest' : 'newest'))}
+          onSelectSort={(sort) => {
+            setSortOrder(sort);
+            setCurrentPage(1);
+          }}
           importanceFilter={importanceFilter}
           onSelectImportance={(imp) => {
             setImportanceFilter(imp);
+            setCurrentPage(1);
+          }}
+          sentimentFilter={sentimentFilter}
+          onSelectSentiment={(st) => {
+            setSentimentFilter(st);
             setCurrentPage(1);
           }}
           eventTypeFilter={eventTypeFilter}
@@ -527,6 +619,8 @@ export default function App() {
               </div>
             )}
           </div>
+        )}
+          </>
         )}
       </main>
 

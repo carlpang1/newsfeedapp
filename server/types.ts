@@ -25,6 +25,11 @@ export interface ScoreExplanation {
     total: number;
     breakdown: ScoreSignalBreakdown[];
   };
+  sentiment?: {
+    total: number;
+    base?: number;
+    breakdown: ScoreSignalBreakdown[];
+  };
   eventType: string;
   sourceTier: number;
   signalsMatched: string[];
@@ -43,6 +48,7 @@ export interface NewsArticle {
   tickers?: string[]; // Associated ticker symbols
   importance_score?: number;
   relevance_score?: number;
+  sentiment_score?: number;
   event_type?: string;
   source_tier?: number;
   duplicate_group_id?: string;
@@ -60,6 +66,7 @@ export interface NewsAnalysis {
   news_id: number;
   importance_score: number;
   relevance_score: number;
+  sentiment_score: number;
   event_type: string;
   source_tier: number;
   duplicate_group_id: string;

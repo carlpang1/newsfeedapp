@@ -15,6 +15,7 @@ import { NewsIntelligenceEngine } from './services/intelligence.js';
 import { CalibrationEngine } from './services/calibration.js';
 import { AIEngine } from './services/aiEngine.js';
 import { AIEligibilityGate } from './services/aiEligibility.js';
+import { TickerSummaryEngine } from './services/tickerSummary.js';
 
 let db: Database | null = null;
 const DB_PATH = process.env.DATABASE_PATH || './data/news.db';
@@ -45,10 +46,12 @@ export async function getDb(): Promise<Database> {
   initSchema(db);
   CalibrationEngine.initSchema(db);
   AIEngine.initSchema(db);
+  TickerSummaryEngine.initSchema(db);
   seedDefaultTickers(db);
   backfillUnclassifiedNews(db);
+  recalculateSentimentScores(db);
   CalibrationEngine.seedRealisticCalibrationReviews(db);
-  seedInitialAIAnalyses(db);
+  // seedInitialAIAnalyses(db);
   saveDbToDisk(db);
 
   return db;
@@ -107,6 +110,7 @@ function initSchema(database: Database) {
       news_id INTEGER PRIMARY KEY,
       importance_score INTEGER NOT NULL,
       relevance_score INTEGER NOT NULL,
+      sentiment_score INTEGER NOT NULL DEFAULT 50,
       event_type TEXT NOT NULL,
       source_tier INTEGER NOT NULL,
       duplicate_group_id TEXT,
@@ -115,7 +119,32 @@ function initSchema(database: Database) {
       classified_at TEXT NOT NULL,
       FOREIGN KEY (news_id) REFERENCES news(id) ON DELETE CASCADE
     );
+  `);
 
+  // Safe migration check for existing disk databases before creating indexes
+  try {
+    const tableInfo = database.exec(`PRAGMA table_info(tickers);`);
+    if (tableInfo.length > 0 && tableInfo[0].values) {
+      const colNames = tableInfo[0].values.map((v: any) => String(v[1]));
+      if (!colNames.includes('last_successful_fetch_at')) {
+        database.run(`ALTER TABLE tickers ADD COLUMN last_successful_fetch_at TEXT;`);
+        logger.info('Migrated tickers table: added last_successful_fetch_at column.');
+      }
+    }
+
+    const naInfo = database.exec(`PRAGMA table_info(news_analysis);`);
+    if (naInfo.length > 0 && naInfo[0].values) {
+      const naColNames = naInfo[0].values.map((v: any) => String(v[1]));
+      if (!naColNames.includes('sentiment_score')) {
+        database.run(`ALTER TABLE news_analysis ADD COLUMN sentiment_score INTEGER NOT NULL DEFAULT 50;`);
+        logger.info('Migrated news_analysis table: added sentiment_score column.');
+      }
+    }
+  } catch (err: any) {
+    logger.warn(`Migration check note: ${err.message}`);
+  }
+
+  database.run(`
     CREATE INDEX IF NOT EXISTS idx_tickers_symbol ON tickers(symbol);
     CREATE INDEX IF NOT EXISTS idx_tickers_enabled ON tickers(enabled);
     CREATE INDEX IF NOT EXISTS idx_news_published_at ON news(published_at DESC);
@@ -126,23 +155,10 @@ function initSchema(database: Database) {
     CREATE INDEX IF NOT EXISTS idx_ticker_news_news ON ticker_news(news_id);
     CREATE INDEX IF NOT EXISTS idx_news_analysis_importance ON news_analysis(importance_score DESC);
     CREATE INDEX IF NOT EXISTS idx_news_analysis_relevance ON news_analysis(relevance_score DESC);
+    CREATE INDEX IF NOT EXISTS idx_news_analysis_sentiment ON news_analysis(sentiment_score DESC);
     CREATE INDEX IF NOT EXISTS idx_news_analysis_event_type ON news_analysis(event_type);
     CREATE INDEX IF NOT EXISTS idx_news_analysis_duplicate_group ON news_analysis(duplicate_group_id);
   `);
-
-  // Safe migration check for existing disk databases
-  try {
-    const tableInfo = database.exec(`PRAGMA table_info(tickers);`);
-    if (tableInfo.length > 0 && tableInfo[0].values) {
-      const colNames = tableInfo[0].values.map((v: any) => String(v[1]));
-      if (!colNames.includes('last_successful_fetch_at')) {
-        database.run(`ALTER TABLE tickers ADD COLUMN last_successful_fetch_at TEXT;`);
-        logger.info('Migrated tickers table: added last_successful_fetch_at column.');
-      }
-    }
-  } catch (err: any) {
-    logger.warn(`Migration check note: ${err.message}`);
-  }
 }
 
 function backfillUnclassifiedNews(database: Database) {
@@ -199,13 +215,14 @@ function backfillUnclassifiedNews(database: Database) {
         });
 
         const insStmt = database.prepare(`
-          INSERT OR REPLACE INTO news_analysis (news_id, importance_score, relevance_score, event_type, source_tier, duplicate_group_id, explanation_json, classification_version, classified_at)
-          VALUES ($news_id, $importance_score, $relevance_score, $event_type, $source_tier, $duplicate_group_id, $explanation_json, $classification_version, $classified_at)
+          INSERT OR REPLACE INTO news_analysis (news_id, importance_score, relevance_score, sentiment_score, event_type, source_tier, duplicate_group_id, explanation_json, classification_version, classified_at)
+          VALUES ($news_id, $importance_score, $relevance_score, $sentiment_score, $event_type, $source_tier, $duplicate_group_id, $explanation_json, $classification_version, $classified_at)
         `);
         insStmt.run({
           $news_id: item.id,
           $importance_score: analysis.importanceScore,
           $relevance_score: analysis.relevanceScore,
+          $sentiment_score: analysis.sentimentScore,
           $event_type: analysis.eventType,
           $source_tier: analysis.sourceTier,
           $duplicate_group_id: analysis.duplicateGroupId,
@@ -219,6 +236,66 @@ function backfillUnclassifiedNews(database: Database) {
     }
   } catch (err: any) {
     logger.warn(`Backfill note: ${err.message}`);
+  }
+}
+
+function recalculateSentimentScores(database: Database) {
+  try {
+    const stmt = database.prepare(`
+      SELECT n.id, n.title, n.summary, na.event_type, na.explanation_json
+      FROM news n
+      JOIN news_analysis na ON n.id = na.news_id
+    `);
+    const items: Array<{ id: number; title: string; summary: string; eventType: string; explanationJson: string }> = [];
+    while (stmt.step()) {
+      const row = stmt.getAsObject() as any;
+      items.push({
+        id: Number(row.id),
+        title: String(row.title),
+        summary: String(row.summary || ''),
+        eventType: String(row.event_type || 'other'),
+        explanationJson: String(row.explanation_json || '{}'),
+      });
+    }
+    stmt.free();
+
+    if (items.length > 0) {
+      const updateStmt = database.prepare(`
+        UPDATE news_analysis
+        SET sentiment_score = $sentiment_score,
+            explanation_json = $explanation_json
+        WHERE news_id = $news_id
+      `);
+
+      for (const item of items) {
+        const sentimentRes = NewsIntelligenceEngine.calculateSentimentScore({
+          headline: item.title,
+          summary: item.summary,
+          eventType: item.eventType as any,
+        });
+
+        let explanation: any = {};
+        try {
+          explanation = JSON.parse(item.explanationJson);
+        } catch {}
+
+        explanation.sentiment = {
+          total: sentimentRes.score,
+          base: 50,
+          breakdown: sentimentRes.breakdown,
+        };
+
+        updateStmt.run({
+          $news_id: item.id,
+          $sentiment_score: sentimentRes.score,
+          $explanation_json: JSON.stringify(explanation),
+        });
+      }
+      updateStmt.free();
+      logger.info(`Recalculated deterministic sentiment scores for ${items.length} articles.`);
+    }
+  } catch (err: any) {
+    logger.warn(`Sentiment recalculation note: ${err.message}`);
   }
 }
 
@@ -764,13 +841,14 @@ export async function analyzeAndSaveArticle(
 
   const now = new Date().toISOString();
   const insStmt = database.prepare(`
-    INSERT OR REPLACE INTO news_analysis (news_id, importance_score, relevance_score, event_type, source_tier, duplicate_group_id, explanation_json, classification_version, classified_at)
-    VALUES ($news_id, $importance_score, $relevance_score, $event_type, $source_tier, $duplicate_group_id, $explanation_json, $classification_version, $classified_at)
+    INSERT OR REPLACE INTO news_analysis (news_id, importance_score, relevance_score, sentiment_score, event_type, source_tier, duplicate_group_id, explanation_json, classification_version, classified_at)
+    VALUES ($news_id, $importance_score, $relevance_score, $sentiment_score, $event_type, $source_tier, $duplicate_group_id, $explanation_json, $classification_version, $classified_at)
   `);
   insStmt.run({
     $news_id: newsId,
     $importance_score: analysis.importanceScore,
     $relevance_score: analysis.relevanceScore,
+    $sentiment_score: analysis.sentimentScore,
     $event_type: analysis.eventType,
     $source_tier: analysis.sourceTier,
     $duplicate_group_id: analysis.duplicateGroupId,
@@ -784,6 +862,7 @@ export async function analyzeAndSaveArticle(
     news_id: newsId,
     importance_score: analysis.importanceScore,
     relevance_score: analysis.relevanceScore,
+    sentiment_score: analysis.sentimentScore,
     event_type: analysis.eventType,
     source_tier: analysis.sourceTier,
     duplicate_group_id: analysis.duplicateGroupId,
@@ -912,8 +991,9 @@ export async function getNews(options?: {
   endDate?: string;
   source?: string;
   search?: string;
-  sort?: 'newest' | 'oldest' | 'importance' | 'relevance';
+  sort?: 'newest' | 'oldest' | 'importance' | 'relevance' | 'sentiment_high' | 'sentiment_low';
   importance?: 'all' | 'critical' | 'high' | 'medium' | 'low';
+  sentiment?: 'all' | 'bullish' | 'bearish' | 'neutral';
   eventType?: string;
   page?: number;
   limit?: number;
@@ -976,6 +1056,16 @@ export async function getNews(options?: {
     }
   }
 
+  if (options?.sentiment && options.sentiment !== 'all') {
+    if (options.sentiment === 'bullish') {
+      baseQuery += ` AND COALESCE(na.sentiment_score, 50) >= 51`;
+    } else if (options.sentiment === 'bearish') {
+      baseQuery += ` AND COALESCE(na.sentiment_score, 50) <= 49`;
+    } else if (options.sentiment === 'neutral') {
+      baseQuery += ` AND COALESCE(na.sentiment_score, 50) = 50`;
+    }
+  }
+
   if (options?.search && options.search.trim()) {
     const term = `%${options.search.trim()}%`;
     baseQuery += ` AND (n.title LIKE $search OR n.summary LIKE $search OR n.publisher LIKE $search OR na.event_type LIKE $search)`;
@@ -996,6 +1086,10 @@ export async function getNews(options?: {
     orderBy = 'COALESCE(na.importance_score, 0) DESC, n.published_at DESC';
   } else if (options?.sort === 'relevance') {
     orderBy = 'COALESCE(na.relevance_score, 0) DESC, n.published_at DESC';
+  } else if (options?.sort === 'sentiment_high') {
+    orderBy = 'COALESCE(na.sentiment_score, 50) DESC, n.published_at DESC';
+  } else if (options?.sort === 'sentiment_low') {
+    orderBy = 'COALESCE(na.sentiment_score, 50) ASC, n.published_at DESC';
   }
 
   const dataQuery = `
@@ -1011,6 +1105,7 @@ export async function getNews(options?: {
       n.created_at,
       na.importance_score,
       na.relevance_score,
+      na.sentiment_score,
       na.event_type,
       na.source_tier,
       na.duplicate_group_id,
@@ -1050,6 +1145,7 @@ export async function getNews(options?: {
       created_at: String(row.created_at),
       importance_score: row.importance_score !== null && row.importance_score !== undefined ? Number(row.importance_score) : undefined,
       relevance_score: row.relevance_score !== null && row.relevance_score !== undefined ? Number(row.relevance_score) : undefined,
+      sentiment_score: row.sentiment_score !== null && row.sentiment_score !== undefined ? Number(row.sentiment_score) : undefined,
       event_type: row.event_type ? String(row.event_type) : undefined,
       source_tier: row.source_tier ? Number(row.source_tier) : undefined,
       duplicate_group_id: row.duplicate_group_id ? String(row.duplicate_group_id) : undefined,
