@@ -1,0 +1,3172 @@
+{
+  "export_version": "1.0",
+  "export_timestamp": "2026-08-15T10:32:16.823Z",
+  "total_articles": 95,
+  "articles": [
+    {
+      "original_news_id": 179,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Is It Too Late to Buy Ondas Stock?",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/is-it-too-late-to-buy-ondas-stock/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:35:00.000Z",
+      "summary": "Ondas' stock surged as the military drone company won key contracts.",
+      "article_hash": "111189a9fb60c940f32cfc3af0d6c193fe5ceee7ef0432292d47537686cd4d99",
+      "retrieved_at": "2026-08-15T09:40:41.919Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 1,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 172,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Jensen Huang Explained $500 Billion of Wall Street Money in Five Words",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/jensen-huang-explained-500-billion-of-wall-street/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:34:00.000Z",
+      "summary": "\"In AI, compute is revenue.\" The whole credit structure announced Monday stands on that sentence -- and on what a repossessed chip is worth.",
+      "article_hash": "a481f8e07eba1ab96f7ba0219344559e81efee93924d183de164c25d65049af3",
+      "retrieved_at": "2026-08-15T09:40:41.893Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 23,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 2,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 52,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "US presses Apple to avoid Chinese memory chips amid shortage - WSJ reports",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/us-presses-apple-avoid-chinese-092522511.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:25:22.000Z",
+      "summary": "Investing.com -- The Trump administration has urged Apple (NASDAQ:AAPL) not to purchase memory chips from Chinese manufacturers as the iPhone maker seeks supplies amid an AI-driven shortage, the Wall Street Journal reported exclusively on Friday.",
+      "article_hash": "f385bb075852bf87696baf38c448f3c1ea09c93a755b476d29d8e662029f9669",
+      "retrieved_at": "2026-08-15T09:40:39.958Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 3,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 174,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "2 Tech Dividend Stocks That Offer High Yields and Payout Growth",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/2-tech-dividend-stocks-that-offer-high-yields-and/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:25:00.000Z",
+      "summary": "Yes, some tech names offer high, sustainable dividend returns.",
+      "article_hash": "ce8cbff5b99bb860b3a2d8c9c769d429e21c0b76a483a65eaa043beaf7eba73b",
+      "retrieved_at": "2026-08-15T09:40:41.900Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 4,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 93,
+      "tickers": [
+        "META",
+        "NVDA"
+      ],
+      "title": "Mark Zuckerberg Just Wrote a 6,500-Word Manifesto on the Future of AI, and Did Not Mention Crypto Once. Here's What He's Missing.",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/mark-zuckerberg-just-wrote-a-6500-word-manifesto-o/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:20:00.000Z",
+      "summary": "The AI future includes crypto as well. Here's why.",
+      "article_hash": "98fd7b3387cba192e54a2f62dd87061a903a7a86f67ed0648548e0768195b119",
+      "retrieved_at": "2026-08-15T09:40:40.892Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 5,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 173,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Nvidia Stock Investors Just Got Good News From SpaceX. Wall Street Says It's Time to Buy.",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/nvidia-stock-investors-got-good-news-from-spacex/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:08:00.000Z",
+      "summary": "Elon Musk's SpaceX will build its AI services exclusively on Nvidia system.",
+      "article_hash": "dc0b15493431dfc7fd7659b0bf18d3f179bea38f8cdf787e5ac318651db6e788",
+      "retrieved_at": "2026-08-15T09:40:41.897Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 23,
+        "relevance_score": 65,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 6,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 180,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Demand for Chips Shows No Signs of Slowing. Is Taiwan Semiconductor Too Expensive Now?",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/demand-for-chips-shows-no-signs-of-slowing-is-taiw/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:06:00.000Z",
+      "summary": "With TSMC controlling 70% of the global foundry market, its stock has risen dramatically throughout the AI chip craze.",
+      "article_hash": "6284b4c9048cad0998847dc6297b69c990ed2a3a1a6515ba6e4166983be6a396",
+      "retrieved_at": "2026-08-15T09:40:41.924Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 7,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 175,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Up Over 35% Since Aug. 3, Is it Too Late to Buy Palantir Stock?",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/up-over-35-since-aug-3-is-it-too-late-to-buy-palan/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T09:05:00.000Z",
+      "summary": "The company's second-quarter results caused a major rally in the stock.",
+      "article_hash": "c44895f7b4e8438f68acc4e3aaab69a0fab6d167cbe808c2bc7b35e1cf5b8a3a",
+      "retrieved_at": "2026-08-15T09:40:41.904Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 8,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 176,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Archer Aviation Has $6.9 Million of Revenue. It's Buying a Boeing Business With More Than $200 Million.",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/archer-aviation-has-69-million-of-revenue-its-buyi/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T08:43:00.000Z",
+      "summary": "Boeing hands over three subsidiaries and walks away owning about 16.5% of Archer. Insitu alone brings annual revenue 29 times Archer's own.",
+      "article_hash": "0398ed979352b9048a429fcf2ecbd3bfecba4cefb72825077b01bf540fbb9201",
+      "retrieved_at": "2026-08-15T09:40:41.907Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 9,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 181,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Should You Buy Micron Technology Stock Below $920 per Share? Wall Street Thinks It's Heading to $1,500.",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/should-you-buy-micron-technology-stock-below-920-p/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T08:35:00.000Z",
+      "summary": "If Wall Street is right, it's a no-brainer buy now.",
+      "article_hash": "27d4253d0e291af43ca59a8f602dc1e43579af0582022ca2804b75c3b270ac82",
+      "retrieved_at": "2026-08-15T09:40:41.928Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 23,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 10,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 182,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "President Donald Trump Claims the Stock Market Will Double by the End of His Term, but History Says Otherwise",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/trump-claims-stock-market-will-double-history-says/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T08:26:00.000Z",
+      "summary": "History has an uncanny ability to forecast the future on Wall Street.",
+      "article_hash": "c30354910987a6607fdbbeb9905180d9776d58f82c9d904f6f35721077a70196",
+      "retrieved_at": "2026-08-15T09:40:41.931Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 11,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 183,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "64% of Men Who Make This Investing Move Feel Like \"Failures.\" Do This With Your Money Instead.",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/64-of-men-who-make-this-investing-move-feel-like-f/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T07:50:00.000Z",
+      "summary": "Instead of being a day trader, be a long-term investor to build long-term wealth.",
+      "article_hash": "714d98c8cb6079ad36a309d1b0bd79614c74c8aac66f0930d01ba640c90f4e02",
+      "retrieved_at": "2026-08-15T09:40:41.934Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 12,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 184,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "If You'd Invested $10,000 in Oracle a Year Ago, Here's What It Would Be Worth Today",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/if-youd-invested-10000-in-oracle-a-year-ago-heres/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T07:31:00.000Z",
+      "summary": "The past 12 months included the software giant's best day since 1992. They still ended with a loss.",
+      "article_hash": "60d46fa9804ada21779917d44bc4b742ad765723074de7abdbcdc2331625c1e8",
+      "retrieved_at": "2026-08-15T09:40:41.940Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 13,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 177,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Could $5,000 in This Nuclear Stock Turn Into a Life-Changing Sum?",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/could-5000-in-this-nuclear-stock-turn-into-a-life/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T07:05:00.000Z",
+      "summary": "Oklo's next-gen nuclear technology could deliver massive long-term returns, but investors should know a few things before diving into the stock.",
+      "article_hash": "03800f08a3cfeafd064376b76901e223327a2c54aec174da014a075ae44893eb",
+      "retrieved_at": "2026-08-15T09:40:41.911Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 14,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 178,
+      "tickers": [
+        "NVDA"
+      ],
+      "title": "Here's How Much Investing $10,000 in Oklo Stock at Its IPO Is Worth Today",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/heres-how-much-investing-10000-in-oklo-stock-at/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T06:50:00.000Z",
+      "summary": "Oklo had a disastrous market debut. Investors who held on to their shares, however, have had the last laugh.",
+      "article_hash": "5b7439dbe244a6311f769ff8056d90772c1f8afa78db175ab7995c1c629ea9c0",
+      "retrieved_at": "2026-08-15T09:40:41.914Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 15,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 1,
+      "tickers": [
+        "AMZN",
+        "TSLA",
+        "NVDA"
+      ],
+      "title": "Elon Musk Admits He Underestimated Anthropic's AI -- Why Amazon Investors Should Care",
+      "canonical_url": "https://www.fool.com/investing/2026/08/15/elon-musk-admits-he-underestimated-anthropics-ai-w/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T05:20:00.000Z",
+      "summary": "The AI rocket ship is turning into a fruitful partnership with Amazon.",
+      "article_hash": "343fe394ce4b7d15a417b88884217d43c00e1bfe7b3a6357e0cf060221e56d81",
+      "retrieved_at": "2026-08-15T09:40:39.502Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 16,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 2,
+      "tickers": [
+        "AMZN",
+        "MSFT"
+      ],
+      "title": "‘Big Short’ investor warns AI boom has quiet weak spot",
+      "canonical_url": "https://www.thestreet.com/investing/big-short-investor-warns-ai-boom-has-quiet-weak-spot?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T02:03:00.000Z",
+      "summary": "The artificial-intelligence boom is sold to investors as one of the broadest technology shifts in decades. And a shockingly substantial part of the answer may lie with just two corporations, says Steve Eisman. The investor best known for betting against the U.S. housing market before the financial ...",
+      "article_hash": "7e05e0fcd0d38d1ffbba60a211afc94878bd990f9848a307706c8617bd64c738",
+      "retrieved_at": "2026-08-15T09:40:39.524Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 17,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 3,
+      "tickers": [
+        "AMZN",
+        "META",
+        "MSFT"
+      ],
+      "title": "Pershing Square Holdings Ltd (LSE:PSH) (Q2 2026) Earnings Call Highlights: Strategic Leverage ...",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/pershing-square-holdings-ltd-lse-010734806.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T01:07:34.000Z",
+      "summary": "CEO Bill Ackman outlines plans for investment-grade debt, a new venture vehicle, and potential upside from Fannie Mae and Freddie Mac to drive long-term shareholder value.",
+      "article_hash": "7552a4f466c454055217846b6315245e7ab339977fbc5ffe3e3b35d859eb9c56",
+      "retrieved_at": "2026-08-15T09:40:39.538Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 18,
+        "human_event_type": "earnings",
+        "human_importance": "high",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Core quarterly financial results; high fundamental importance.",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 89,
+      "tickers": [
+        "META"
+      ],
+      "title": "Meta (META) Stock Sees Fair Value Cut As AI Spending Raises Margin Questions",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/meta-meta-stock-sees-fair-001727047.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T00:17:27.000Z",
+      "summary": "The fair value estimate for Meta Platforms has been trimmed from about US$828.80 to about US$754.10, pointing to a more conservative price target in updated models. This shift lines up with a split analyst view, where some highlight long term upside from AI and advertising while others focus on higher spending and less certain AI monetization timing. Reading on, you will see how this evolving narrative shapes key questions to watch and how to track future updates. Analyst Price Targets don't...",
+      "article_hash": "7da0f26d8909efa98185fe25226e94ac0b6fe1c171cf4bccf31ab0cd5a7b7392",
+      "retrieved_at": "2026-08-15T09:40:40.872Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 65,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 19,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 4,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Applied Optoelectronics (AAOI) Could Be 93% Overvalued As Amazon Deal Lifts Revenue Hopes",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-aaoi-could-93-001604934.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-15T00:16:04.000Z",
+      "summary": "Applied Optoelectronics (AAOI) is in focus after a multi-year supply agreement with Amazon, fresh third quarter 2026 revenue guidance, and second quarter earnings that highlighted higher sales alongside continued net losses. See our latest analysis for Applied Optoelectronics. The news around Applied Optoelectronics has coincided with intense share price swings, with a 1-day share price return of 15.53% and a 30-day share price return of 37.76%, while the 90-day share price return declined...",
+      "article_hash": "d903078a8c9d9e611f299712e918f06b6e1161eba9d66511a6a15e5ab3ee2eab",
+      "retrieved_at": "2026-08-15T09:40:39.546Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 20,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 5,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Review & Preview: Headline Fatigue",
+      "canonical_url": "https://finance.yahoo.com/m/e8636703-b88f-3346-ba95-c1d74a6e7577/review-%26-preview%3A-headline.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:55:00.000Z",
+      "summary": "REVIEW PREVIEW NEWSLETTER Zen. The S&P 500 pulled back a touch from its record high today, but the index still wrapped a third-straight week of gains. The market benchmark dipped 0.2%, while the Nasdaq Composite fell 0.",
+      "article_hash": "e25ebfd4219bb0808608b2588fce7286cdd389c7d9a71e91da4e17e3eff462f5",
+      "retrieved_at": "2026-08-15T09:40:39.553Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 21,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 94,
+      "tickers": [
+        "META",
+        "WMT"
+      ],
+      "title": "Why Is Tether Looking Like a Central Bank?",
+      "canonical_url": "https://finance.yahoo.com/m/f0b9af5c-5fd0-3bd0-973e-e0a8de88b3a6/why-is-tether-looking-like-a.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:49:00.000Z",
+      "summary": "Gold  recent rally is mostly due to five big buyers: four central banks and Tether, a company that deals in cryptocurrency.  Tether is buying for the very reasons that central banks are—to diversify its holdings and hedge against inflation and significant dollar weakness, which Tether’s crypto stablecoin  USDT  is pegged to.  In the first half, Tether bought more than 27 metric tons of gold—matching Kazakhstan.",
+      "article_hash": "7b011c10da21e99661a22a2945da01f75ef3691ca86b3ea6d25ad00ef5b1770b",
+      "retrieved_at": "2026-08-15T09:40:40.897Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 22,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 99,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "Why AI is unlikely to be an apocalypse for jobs",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/why-ai-unlikely-apocalypse-jobs-234216568.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:42:16.000Z",
+      "summary": "Investing.com -- Artificial intelligence is more likely to replace individual tasks than entire occupations, limiting the risk of widespread job destruction, BofA Global Research said in a report examining employment across 206 US industries.",
+      "article_hash": "b917f36f4f1b382180998c8192a48186b25030857f4d040c6a96dc4d62c100c3",
+      "retrieved_at": "2026-08-15T09:40:40.927Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 23,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 45,
+      "tickers": [
+        "AAPL",
+        "BRK-B"
+      ],
+      "title": "Berkshire Hathaway Makes Alphabet Its No. 3 Holding After 48M Share Buy",
+      "canonical_url": "https://stocktwits.com/news-articles/markets/equity/berkshire-hathaway-makes-alphabet-its-no-3-holding-after-48m-share-buy/cZotygTRJK2?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:28:53.000Z",
+      "summary": "According to the firm’s filing with the Securities and Exchange Commission, Berkshire lifted the combined GOOGL and GOOG position to about 106 million shares.",
+      "article_hash": "dc113005c2dc903fd2ec1601f9c9f43609cfe701c30cd37c16c34a85787d166d",
+      "retrieved_at": "2026-08-15T09:40:39.929Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 24,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 100,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "JFrog (FROG) Is Up 7.4% After Raising Guidance On AI-Fueled Cloud Security Demand - Has The Bull Case Changed?",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/jfrog-frog-7-4-raising-231159451.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:11:59.000Z",
+      "summary": "In August 2026, JFrog reported Q2 results showing revenue rising to US$163.77 million with a sharply smaller net loss, while also issuing higher full-year revenue guidance and highlighting accelerating demand for its cloud and security offerings amid AI-driven software development. JFrog’s upcoming swampUP 2026 conference in New York, featuring security and AI leaders from Anthropic, Microsoft, NVIDIA and others, underlines its push to position the platform at the center of securing AI-era...",
+      "article_hash": "ec9c9154d5bf58b4ffb480e4f5f631d5d9e540a83b99027f6e4523565a2dd5c3",
+      "retrieved_at": "2026-08-15T09:40:40.930Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 25,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 40,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Maryland tax court voids digital ad tax, orders refunds to Apple, Google and Peacock TV",
+      "canonical_url": "https://finance.yahoo.com/media-advertising/articles/maryland-tax-court-voids-digital-230625946.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T23:06:25.000Z",
+      "summary": "A Maryland state tax court has struck down the state’s first-in-the-nation tax on digital advertising and ordered state officials to repay the tax money already collected from big tech firms.  The Maryland Tax Court said the tax violates the federal Internet Tax Freedom Act as well as the First Amendment and the commerce and due process clauses of the U.S. Constitution.  Maryland estimated the tax, approved in 2021, could raise about $250 million a year to help pay for a sweeping K-12 education measure.",
+      "article_hash": "aef1a50d972d71106931d9a0fbb4d02d410178ee7fbdc7d78589000cc2fa4acf",
+      "retrieved_at": "2026-08-15T09:40:39.846Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 26,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 97,
+      "tickers": [
+        "META"
+      ],
+      "title": "Third Point Exited Nvidia and Broadcom, Made New Bet on Warner Bros. Discovery in Second Quarter",
+      "canonical_url": "https://finance.yahoo.com/m/64c7a299-0ef1-3afe-9888-95b3474ece56/third-point-exited-nvidia-and.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:43:00.000Z",
+      "summary": "The investment firm shifted away from some of the market’s biggest semiconductor winners in the second quarter.",
+      "article_hash": "3f571c14890ff725cec7a35ae06547892ff50fd6c77d9b33c836ba9886c6b5b6",
+      "retrieved_at": "2026-08-15T09:40:40.908Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 27,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 6,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Amazon.com vs. StubHub: Which Consumer Stock Is a Better Buy in 2026?",
+      "canonical_url": "https://www.fool.com/coverage/better-buy/2026/08/14/amazon-com-vs-stubhub-which-consumer-stock-is-a-better-buy-in-2026/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:28:13.000Z",
+      "summary": "Amazon's $77.7 billion net income and 10.8% margin showcase profitability at scale, while StubHub's $191 million free cash flow points to a path back from recent losses.",
+      "article_hash": "29ce3d30d43a40e0245cbeee2f4956c0ea40d1ae85187e5b5f8f369423f586a0",
+      "retrieved_at": "2026-08-15T09:40:39.561Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 28,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 47,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Dell Stock Is Daring You To Believe Its Numbers",
+      "canonical_url": "https://www.trefis.com/articles/611492/dell-stock-is-daring-you-to-believe-its-numbers/2026-08-14?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:24:55.000Z",
+      "summary": "Management put a number on the board so big it forces a question, and the market is paying up as if it's a sure thing.",
+      "article_hash": "384a93fd8a43ab0353ea6d006416dbb225fff7f4d1e6b28fcff0e0511061f731",
+      "retrieved_at": "2026-08-15T09:40:39.939Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 29,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 7,
+      "tickers": [
+        "AMZN",
+        "META",
+        "MSFT"
+      ],
+      "title": "AI Infrastructure Stocks: Billions of Reasons to Stay Bullish",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/ai-infrastructure-stocks-billions-reasons-221200697.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:12:00.000Z",
+      "summary": "Investors have hundreds of billions ($) of reasons why to remain bullish on the AI buildout, particularly for companies like Vertiv (VRT) and Broadcom (AVGO), as companies continue to invest heavily in their AI futures.",
+      "article_hash": "f4aa5762438222915842cb486107906a866bc8dff3e1a361bc37f4a6f7a41a9e",
+      "retrieved_at": "2026-08-15T09:40:39.569Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 30,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 160,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Could a Tesla (TSLA)-Space Exploration Technologies (SPCX) Merger Help Elon Musk Unlock his Massive Tesla Pay Package?",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-space-exploration-220616552.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:06:16.000Z",
+      "summary": "A potential merger between Elon Musk’s flagship companies, Tesla, Inc. (NASDAQ:TSLA) and Space Exploration Technologies Corp. (NASDAQ:SPCX), on August 12, has sparked intense debate among Wall Street analysts. The Wall Street Journal recently reported that under the massive $1 trillion pay package approved by Tesla shareholders, a loophole could allow Musk to unlock huge equity […]",
+      "article_hash": "95235dda929dd30f4be9f5fe6983b87a3f44d09e00f1398e974fbe84ed016383",
+      "retrieved_at": "2026-08-15T09:40:41.842Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 65,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 31,
+        "human_event_type": "acquisition",
+        "human_importance": "high",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Corporate M&A transaction.",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 8,
+      "tickers": [
+        "AMZN",
+        "WMT"
+      ],
+      "title": "Home Depot Paid Shareholders $68 Billion. The Stock Still Lagged.",
+      "canonical_url": "https://www.trefis.com/articles/611475/home-depot-paid-shareholders-68-billion-the-stock-still-lagged/2026-08-14?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T22:04:14.000Z",
+      "summary": "The home improvement giant showered its owners with cash, yet the stock fell far behind the market. Here is the accounting of what investors actually got, and what the trade-off cost them.",
+      "article_hash": "7115926a3775e0c1a241768914d4429d163232c48e4b78a078cdafeddc7b9783",
+      "retrieved_at": "2026-08-15T09:40:39.577Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 32,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 9,
+      "tickers": [
+        "AMZN",
+        "AMD"
+      ],
+      "title": "Druckenmiller loads up on Amazon and AMD while dumping some chipmakers, 13F shows",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/druckenmiller-loads-amazon-amd-while-215638635.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:56:38.000Z",
+      "summary": "Investing.com -- Stanley Druckenmiller's Duquesne Family Office executed a dramatic reshuffling of its portfolio during the latest quarter, highlighted by a massive rotation back into mega-cap technology and a decisive exit from several legacy semiconductor names. Most notably, the firm increased its core equity position in Amazon.com Inc (NASDAQ:AMZN) by more than 1,000% to 541,600 shares, while simultaneously more than doubling its call options on the e-commerce giant. Against that backdrop, D",
+      "article_hash": "28ac9e7186b44f3c2a3981f88bf65f749d01ac92e1a6f415a5781048d87300f1",
+      "retrieved_at": "2026-08-15T09:40:39.583Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 33,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 98,
+      "tickers": [
+        "META",
+        "MSFT"
+      ],
+      "title": "Institutional investors reveal cautious approach to tech favorites in US quarterly 13F filings",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/institutional-investors-reveal-cautious-approach-215416925.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:54:16.000Z",
+      "summary": "Institutional investors pulled back slightly from key stock market segments such as semiconductors, AI infrastructure and megacap technology companies during the second quarter, with few big bets in either direction, U.S. Securities and Exchange Commission filings show.  A Reuters analysis of quarterly 13F filings from 6,371 pension ‌funds, hedge funds, wealth managers and other institutional investors reveals a narrow gap between the number of investors increasing their positions and those reducing them, but in many cases the gap ‌swung slightly negative.  Nearly 44% of filers reviewed trimmed their holdings of the Magnificent Seven group of megacap tech firms such as Microsoft and Meta Platforms, while 42% initiated or expanded their holdings of this group.",
+      "article_hash": "497f4905c64bde955b4981e70b4f2f8867f34b95b8feb8009681f32264f8e06e",
+      "retrieved_at": "2026-08-15T09:40:40.911Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 34,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 48,
+      "tickers": [
+        "AAPL",
+        "BRK-B"
+      ],
+      "title": "Berkshire Hathaway Boosted Alphabet, Delta Stakes in 2nd Quarter, Sold Bank of America",
+      "canonical_url": "https://finance.yahoo.com/m/41aa00bd-2bc8-3705-9d89-9084c4fa7ac3/berkshire-hathaway-boosted.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:46:00.000Z",
+      "summary": "Berkshire’s Alphabet stake—consisting of the search giant’s voting and nonvoting shares—rose about 80% in the quarter to 106 million shares, reflecting a purchase directly from Alphabet in June and open-market buys, based on a 13-F report with the Securities and Exchange Commission late Friday.  Berkshire was a seller of part of its sizable stake in  Bank of America  cutting it by 30 million shares to 483 million shares now worth about $31 billion.",
+      "article_hash": "b66523853c6be0b209d8eded338af8728eb8b2a7d5911fe7f2fbee1798298163",
+      "retrieved_at": "2026-08-15T09:40:39.942Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 35,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 95,
+      "tickers": [
+        "META"
+      ],
+      "title": "Reddit Stock's Pullback Is Tempting, But Don't Ignore The User Question",
+      "canonical_url": "https://www.trefis.com/articles/611486/reddit-stocks-pullback-is-tempting-but-dont-ignore-the-user-question/2026-08-14?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:37:30.000Z",
+      "summary": "The social media company's business is booming, but a nagging concern about its audience has investors on edge after the recent drop.",
+      "article_hash": "a2fcfb0b570a4de3e634dd3325361f1c672409ba7518a57e70e95d343ce84eaf",
+      "retrieved_at": "2026-08-15T09:40:40.902Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 36,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 65,
+      "tickers": [
+        "BRK-B",
+        "GOOGL"
+      ],
+      "title": "Berkshire ups Alphabet stake under Greg Abel, making it a top-3 holding",
+      "canonical_url": "https://finance.yahoo.com/video/berkshire-ups-alphabet-stake-under-212900630.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:29:00.000Z",
+      "summary": "Berkshire Hathaway (BRK-A, BRK-B), under new CEO Greg Abel, increased its Alphabet position, making the Google parent its third-largest U.S.-listed equity holding by market value, behind Apple (AAPL) and American Express (AXP). According to a new filing, Berkshire held roughly 106 million Alphabet shares, valued at $37.9 billion, as of the end of June. Recent reporting confirms Berkshire invested about $10 billion in Alphabet during the second quarter.",
+      "article_hash": "5e2d226231206cad522789bfa44794eaecba0317e4b72c2967cc0a5de6781d4b",
+      "retrieved_at": "2026-08-15T09:40:40.030Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 37,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 161,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Stock Market Today, Aug. 14: Tesla Gains on TD Cowen Buy Reiteration and $460 Target",
+      "canonical_url": "https://www.fool.com/coverage/stock-market-today/2026/08/14/stock-market-today-aug-14-tesla-gains-on-td-cowen-buy-reiteration-and-460-target/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:16:47.000Z",
+      "summary": "On Aug. 14, 2026, analyst support helped the stock climb, adding to a two-week rally.",
+      "article_hash": "83ca794fb237f477cbaf945039538bfabc1d4d4a69bc6392be727922126ff2f5",
+      "retrieved_at": "2026-08-15T09:40:41.846Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 38,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 169,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Waymo Scales Toward 1 Million Weekly Rides After California Approval For Expansion",
+      "canonical_url": "https://stocktwits.com/news-articles/markets/equity/waymo-scales-toward-1-million-weekly-rides-after-california-approval-for-expansion/cZotHVjRJKb?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:07:48.000Z",
+      "summary": "CPUC approved the expansion of Waymo’s fully autonomous ride-hailing service across the San Francisco Bay Area and Los Angeles, plus launches in Sacramento and San Diego.",
+      "article_hash": "f8fb264d1471e3fc011e6847267058ace31ab81a0ec034f686d459d0a5c31572",
+      "retrieved_at": "2026-08-15T09:40:41.874Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 39,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 49,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Databricks vs Snowflake: Analyst explains key differences in AI platforms",
+      "canonical_url": "https://finance.yahoo.com/video/databricks-vs-snowflake-analyst-explains-210015938.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T21:00:15.000Z",
+      "summary": "Clear Street Managing Director Owen Lau compares Databricks to Android as an open-source alternative to Snowflake, while outlining the margin pressures and ROI debates surrounding its serverless AI model following a $190 billion valuation.",
+      "article_hash": "667739fe4a2e6f253455a8916c45fc5ace13c2b949c22ebdd40fac5d467f4102",
+      "retrieved_at": "2026-08-15T09:40:39.945Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 40,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 101,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "ADBE Stock: Collect 12% While Setting A 30%-Off Buy Price",
+      "canonical_url": "https://www.trefis.com/articles/611479/adbe-stock-collect-12-while-setting-a-30-off-buy-price/2026-08-14?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T20:59:53.000Z",
+      "summary": "Here is a way to collect a steady income stream from Adobe stock right now, which you keep no matter what, while lining up a chance to buy this creative software giant at a deep discount if its turnaround stumbles.",
+      "article_hash": "1fbecaf5d5d8af512fc50472212cee69367a45f98b28cd95a038fcf328616ba6",
+      "retrieved_at": "2026-08-15T09:40:40.934Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 41,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 10,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Rocket Lab, Amazon Win Space Force Contracts. SpaceX Closes Cursor Deal.",
+      "canonical_url": "https://finance.yahoo.com/m/8a0d6d61-6808-361b-acad-32b72e4561d8/rocket-lab%2C-amazon-win-space.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T20:57:48.000Z",
+      "summary": "Space Force taps Rocket Lab, Amazon, Lockheed Martin and more for communications contracts. SpaceX closes $60 billion Cursor deal.",
+      "article_hash": "1ea308f8e01e606bf20c2f3ec9c9ad9945ae13e8009621bcb486c75c69222eca",
+      "retrieved_at": "2026-08-15T09:40:39.590Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 42,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 162,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Tesla Reportedly Will Demo Flying Roadster",
+      "canonical_url": "https://finance.yahoo.com/m/1b6cfee2-0069-35dc-aded-fce36aab6c84/tesla-reportedly-will-demo.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T20:32:03.000Z",
+      "summary": "Tesla is working on a prototype for a flying version of its long-awaited new Roadster built using special SpaceX-designed thrusters.",
+      "article_hash": "94c1e7202e9c6ed86dbd05bc71bdda43551cfdb5ba02c4acf2e60a299be7a926",
+      "retrieved_at": "2026-08-15T09:40:41.850Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 43,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 163,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Tesla Stock Rises as Musk Teases Potential 'Flying' Roadster Debut",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-rises-musk-teases-200519418.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T20:05:19.000Z",
+      "summary": "Tesla's Wild Roadster Plans and Flying-Car Buzz",
+      "article_hash": "2e6aebd686046e59947662bf8534444eaa8396506eabc7751572e1343d3d12f6",
+      "retrieved_at": "2026-08-15T09:40:41.853Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 44,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 170,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Waymo doubles down on the cars America won’t let you buy",
+      "canonical_url": "https://www.thestreet.com/automotive/waymo-doubles-down-on-chinese-evs-america-wont-let-you-buy?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:37:00.000Z",
+      "summary": "Trade barriers are supposed to be simple machines. You raise the price of a thing until buying it stops making sense, and the buying stops. Washington built one of the tallest of those walls in modern trade policy around Chinese electric vehicles, and by the only measure most people can see, it ...",
+      "article_hash": "1c3392d3f4b00afddf3ad9118b6472853accf74126a9a460ab4b876f0bc0faf3",
+      "retrieved_at": "2026-08-15T09:40:41.878Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 45,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 11,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Amazon.com vs. Comcast: Which Stock Is a Better Buy in 2026?",
+      "canonical_url": "https://www.fool.com/coverage/better-buy/2026/08/14/amazon-com-vs-comcast-which-stock-is-a-better-buy-in-2026/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:32:58.000Z",
+      "summary": "One company is accelerating across every major division, while the other is managing a complicated restructuring.",
+      "article_hash": "406e335237ad7817bf6d236efa136912c40e973d4fb302cd48dd0141661a37fd",
+      "retrieved_at": "2026-08-15T09:40:39.597Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 46,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 12,
+      "tickers": [
+        "AMZN",
+        "MSFT"
+      ],
+      "title": "The Best House On The Block Costs The Most: PLTR",
+      "canonical_url": "https://www.trefis.com/articles/611491/the-best-house-on-the-block-costs-the-most-pltr/2026-08-14?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:28:16.000Z",
+      "summary": "This data-software powerhouse is delivering leading growth, but the market is already charging a leading price for the privilege.",
+      "article_hash": "684e965587d22e4c80d36ef18fefb4d49e71848da35fb5d349e9c86a5220ba0e",
+      "retrieved_at": "2026-08-15T09:40:39.603Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 47,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 13,
+      "tickers": [
+        "AMZN",
+        "META",
+        "MSFT"
+      ],
+      "title": "Tiger Global Management cuts stakes in Big Tech, buys into SpaceX",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/tiger-global-management-cuts-stakes-192754927.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:27:54.000Z",
+      "summary": "Tiger Global Management trimmed several of its Big Tech stakes, exited Netflix, and took positions in Advanced ‌Micro Devices and SpaceX during the second quarter, according to ‌regulatory disclosures filed Friday.  • The hedge fund cut its Alphabet holdings by 45.4% to 5.81 million shares as of June 30 from the end of March, and its Nvidia stake by 6.8% to 11.20 million shares.  • ‌It trimmed its Microsoft ⁠stake by 9.3% to 2.27 million shares and its Amazon position by 3.2% to 9.68 million shares.",
+      "article_hash": "12a658fbf94d14b1cb6c1e262ea2caf53dc37d5424ffe3200e82768b5c029324",
+      "retrieved_at": "2026-08-15T09:40:39.609Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 48,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 164,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Tesla Stock Jumps 2.7% After Fresh Roadster Reveal Signal",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-jumps-2-7-192139233.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:21:39.000Z",
+      "summary": "Tesla's chief designer indicated that the repeatedly delayed electric sports car could finally be approaching its production-form debut.",
+      "article_hash": "bc86442a08af2590aa0b8669fa8336253f6f817856f32668c5cd86810ec69e2e",
+      "retrieved_at": "2026-08-15T09:40:41.856Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 49,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 90,
+      "tickers": [
+        "META"
+      ],
+      "title": "Meta Stock Edges Higher as Australia Enforcement Risk Intensifies",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/meta-stock-edges-higher-australia-192037912.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:20:37.000Z",
+      "summary": "Meta removed hundreds of thousands of suspected teen accounts, but regulators say platform compliance remains inadequate.",
+      "article_hash": "5b0988deddf0f9da585b65cfbe0da6784c671a58484d0361ef3b9519eb3847cd",
+      "retrieved_at": "2026-08-15T09:40:40.879Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 65,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 50,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 41,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Apple Stock Stalls as Jefferies Cuts Target to $263.66",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/apple-stock-stalls-jefferies-cuts-191714058.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:17:14.000Z",
+      "summary": "Jefferies sees pressure from rising component costs and fewer opportunities to lift iPhone pricing through radically differentiated hardware.",
+      "article_hash": "f785821a161b8a2947f2981e8913460867e632ac45415767d927ea067d9e6f31",
+      "retrieved_at": "2026-08-15T09:40:39.853Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 51,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 14,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Seth Klarman’s Baupost Loads Up On AMZN, GOOGL — Takes New Stake In Bill Ackman’s Pershing Square",
+      "canonical_url": "https://stocktwits.com/news-articles/markets/equity/seth-klarmans-baupost-loads-up-on-amzn-googl-takes-new-stake-in-bill-ackman-pershing-square/cZotrFPRJ0C?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:16:26.000Z",
+      "summary": "The billionaire investor’s hedge fund also established a sizable position in CME Group while trimming Restaurant Brands International.",
+      "article_hash": "d985aaa2092f1c47b5790e58c4e6dd9d0c7f953515fe7e74d5faddcd0a8f356e",
+      "retrieved_at": "2026-08-15T09:40:39.615Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 50,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 52,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 96,
+      "tickers": [
+        "META"
+      ],
+      "title": "Reddit Is Still Down 24% This Year. What Will It Take to Get RDDT Stock Back Up to $200?",
+      "canonical_url": "https://247wallst.com/investing/2026/08/14/reddit-is-still-down-24-this-year-what-will-it-take-to-get-rddt-stock-back-up-to-200/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T19:02:31.000Z",
+      "summary": "Reddit just scored S&P 500 membership, but the pop is already fading and the stock sits down 24% for the year. The path back to $200 depends on forces that index inclusion alone cannot deliver.",
+      "article_hash": "90bd5c640f342f26d28f3aae22ebe29d1138bde380016073e791d9d907f0f25a",
+      "retrieved_at": "2026-08-15T09:40:40.905Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 53,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 91,
+      "tickers": [
+        "META"
+      ],
+      "title": "How Serious Are Thousands of Addiction Lawsuits for Meta (META) and Snap (SNAP)?",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/serious-thousands-addiction-lawsuits-meta-182623555.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:26:23.000Z",
+      "summary": "A federal appeals court removed another procedural obstacle facing more than 3,000 lawsuits accusing Meta Platforms, Inc. (NASDAQ:META), Snap Inc. (NYSE:SNAP), Alphabet, and TikTok of harming young users through allegedly addictive product features. The Ninth Circuit did not decide whether the companies are liable. It ruled that Section 230 provides a defense against liability, not […]",
+      "article_hash": "e16be3cb891961a5721b821caea383f003ef1a63f5d3829bafdbfe3cea5e0e3a",
+      "retrieved_at": "2026-08-15T09:40:40.885Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 50,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 54,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 50,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "GOOGL Stock Alert: Google Unleashes Its Biggest Weapon Against Apple",
+      "canonical_url": "https://www.barchart.com/story/news/3857424/googl-stock-alert-google-unleashes-its-biggest-weapon-against-apple?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:20:56.000Z",
+      "summary": "Google’s Pixel 11 puts Gemini at the heart of its smartphone strategy as Alphabet looks to expand AI adoption and challenge Apple’s ecosystem.",
+      "article_hash": "10e14513dcf61ae0bf6145e55ab27922605249273c84a1021194992af9098e4a",
+      "retrieved_at": "2026-08-15T09:40:39.949Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 55,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 42,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "KeyBanc Has Message For Apple Stock Investors",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/keybanc-message-apple-stock-investors-181942735.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:19:42.000Z",
+      "summary": "A stronger demand signal hides a tougher long-term question",
+      "article_hash": "d386d0b1ed73bb1ea776db30bb3e2514c46dbfdd2e1455dc01c18c284d1efcc8",
+      "retrieved_at": "2026-08-15T09:40:39.863Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 56,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 46,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Maryland Court Strikes Down Digital Ad Tax",
+      "canonical_url": "https://www.mediapost.com/publications/article/417259/maryland-court-strikes-down-digital-ad-tax.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:19:39.000Z",
+      "summary": "A Maryland court on Friday struck down a 2021 law that imposed taxes on digital ad sales and ordered the state to provide refunds to Google, Peacock and Apple, which challenged the statute.",
+      "article_hash": "6709cd4d90310c3c388980721f90cba2210bae85226a2d35463581effc39a2b6",
+      "retrieved_at": "2026-08-15T09:40:39.935Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 57,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 15,
+      "tickers": [
+        "AMZN",
+        "AAPL",
+        "LLY",
+        "MSFT",
+        "TSLA"
+      ],
+      "title": "Vanguard Quietly Changed the Index Behind Your VUG ETF. Here’s What Happens to Your Portfolio",
+      "canonical_url": "https://247wallst.com/investing/etf/2026/08/14/vanguard-quietly-changed-the-index-behind-your-vug-etf-heres-what-happens-to-your-portfolio/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:15:41.000Z",
+      "summary": "Vanguard swapped the benchmark powering one of the most popular growth ETFs on the market, and most holders never saw it coming. What looks like a paperwork formality could quietly reshape which companies sit inside your portfolio over time.",
+      "article_hash": "c2cad96e99cb92329c769c31006d5f2b2d7ba099df683827d9622f4e890fcb4c",
+      "retrieved_at": "2026-08-15T09:40:39.621Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 58,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 92,
+      "tickers": [
+        "META"
+      ],
+      "title": "Meta's $27 Billion AI Risk Hides Off Balance Sheet",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/metas-27-billion-ai-risk-181415924.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:14:15.000Z",
+      "summary": "Data-center guarantees could matter if AI economics weaken.",
+      "article_hash": "5c85b19b263bcd24c789178a2cf8357d1cace09b275e8a337e8d26e5ae9e6660",
+      "retrieved_at": "2026-08-15T09:40:40.889Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 65,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 59,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 102,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "Does FICO’s (FICO) New Marketplace Integrations Reveal a Deeper Shift in Its Platform Strategy?",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/does-fico-fico-marketplace-integrations-181223093.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:12:23.000Z",
+      "summary": "In recent days, Informative Research announced it joined Fair Isaac’s FICO Mortgage Direct License Program while Alogram Inc. made its fraud intelligence suite available through FICO Marketplace, broadening access to FICO Scores and AI-driven decisioning tools for lenders and enterprises. Together, these moves expand the reach of FICO’s platform and mortgage ecosystem, potentially deepening client integration by embedding FICO-powered scoring and fraud insights more directly into lending...",
+      "article_hash": "62de1be42cdd3d22d3dd6a8bc65e9e104cafcdfedd7e86bbe26ad182ac2beb23",
+      "retrieved_at": "2026-08-15T09:40:40.938Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 60,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 16,
+      "tickers": [
+        "AMZN",
+        "MSFT"
+      ],
+      "title": "Nvidia Poised for Strong Quarterly Results, Outlook, UBS Says",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/nvidia-poised-strong-quarterly-results-180639120.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:06:39.000Z",
+      "summary": "Nvidia (NVDA) is likely to post strong fiscal second-quarter results and issue an upbeat sales outlo",
+      "article_hash": "5779b6926b5dd07d6531cc88f012bd1845472ff8a31ae503c56949b1e1c7448c",
+      "retrieved_at": "2026-08-15T09:40:39.627Z",
+      "deterministic_analysis": {
+        "event_type": "earnings",
+        "importance_score": 48,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 61,
+        "human_event_type": "earnings",
+        "human_importance": "high",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Core quarterly financial results; high fundamental importance.",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 171,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Prediction: Will Lucid Stock Double This Year?",
+      "canonical_url": "https://247wallst.com/investing/2026/08/14/prediction-will-lucid-stock-double-this-year-2/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T18:00:45.000Z",
+      "summary": "Lucid has bounced nearly 40% off its June lows on a wave of catalysts, from a new CEO to a major robotaxi partnership, and traders are now asking whether a full double is still on the table or already out of reach.",
+      "article_hash": "8ed6fe6ae237a3a8294d60f660d50ae6e9b1525e7e2d8abe7d430c75152d9a2a",
+      "retrieved_at": "2026-08-15T09:40:41.884Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 62,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 165,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Tesla Stock Is on Track for a 2-Week Winning Streak",
+      "canonical_url": "https://finance.yahoo.com/m/ec8f4160-78e6-3be4-8480-59a3ee7e6506/tesla-stock-is-on-track-for-a.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:53:00.000Z",
+      "summary": "Lower borrowing costs tend to benefit growth stocks like the EV maker, but shares are still struggling for the year.",
+      "article_hash": "d822704aef69660bbd20d77908bd67354136b5ee85d49e747bec743b71782d44",
+      "retrieved_at": "2026-08-15T09:40:41.859Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 63,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 166,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Sector Update: Consumer Stocks Mixed in Afternoon Trading",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-mixed-afternoon-173803183.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:38:03.000Z",
+      "summary": "Consumer stocks were mixed Friday afternoon, with the State Street Consumer Staples Select Sector SP",
+      "article_hash": "7cd3f6ccddddfc4097f1ffd0a4652952cb12744e622eb11b5f0da9860821c73e",
+      "retrieved_at": "2026-08-15T09:40:41.862Z",
+      "deterministic_analysis": {
+        "event_type": "industry",
+        "importance_score": 38,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 64,
+        "human_event_type": "industry",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 17,
+      "tickers": [
+        "AMZN",
+        "WMT"
+      ],
+      "title": "Q2 Earnings Season Enters Final Stretch: Walmart Headlines Upcoming Retail Earnings",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/q2-earnings-season-enters-final-173800061.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:38:00.000Z",
+      "summary": "The Q2 earnings season is winding down, but many retail companies, including Walmart, have still yet to report. It and other big-box retailers have faced a difficult operating environment, with elevated fuel costs adding to consumers' financial burdens and increasing retailers' expenses.",
+      "article_hash": "d643085ecff244927ea50d7e53adf2c51878838c2a7014a9a1e39e9f1761a4aa",
+      "retrieved_at": "2026-08-15T09:40:39.633Z",
+      "deterministic_analysis": {
+        "event_type": "earnings",
+        "importance_score": 48,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 65,
+        "human_event_type": "earnings",
+        "human_importance": "high",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Core quarterly financial results; high fundamental importance.",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 18,
+      "tickers": [
+        "AMZN",
+        "MSFT"
+      ],
+      "title": "Liberty All-Star® Equity Fund July 2026 Monthly Update",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/liberty-star-equity-fund-july-173600375.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:36:00.000Z",
+      "summary": "BOSTON, August 14, 2026--Liberty All-Star® Equity Fund July 2026 Monthly Update",
+      "article_hash": "aad6d8b97129ea6b32dd8715228e18b69c9eeddfad22d6d303543f7723212f7a",
+      "retrieved_at": "2026-08-15T09:40:39.639Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 66,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 167,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Elon Musk Rumored to Unveil ‘Flying’ Car Soon as Tesla Stock Is Down 24% YTD",
+      "canonical_url": "https://247wallst.com/investing/2026/08/14/elon-musk-rumored-to-unveil-flying-car-soon-as-tesla-stock-is-down-24-ytd/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:34:39.000Z",
+      "summary": "Tesla's long-delayed Roadster may be headed for a Texas rocket test site with SpaceX thrusters strapped on, but Musk himself has reportedly warned staff the demo could go wrong, and shareholders watching a 24% year-to-date loss want to know if a hover stunt changes anything.",
+      "article_hash": "0fa83fdb74ced88785b26fc49ed1a3b07a30c5457648135f1cbf0e06fb2da335",
+      "retrieved_at": "2026-08-15T09:40:41.865Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 67,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 43,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "Apple Makes Crucial Move in China AI Race",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/apple-makes-crucial-move-china-173337264.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:33:37.000Z",
+      "summary": "Apple is tackling one of iPhone's biggest competitive gaps",
+      "article_hash": "dd8b40454fba460b1c07a3d766dff53b662d9b61f872811f230f692619716dbf",
+      "retrieved_at": "2026-08-15T09:40:39.869Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 68,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 103,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "Adobe Stock Eyes Rebound. Is This a Golden AI Opportunity?",
+      "canonical_url": "https://247wallst.com/investing/2026/08/14/adobe-stock-eyes-redbound-is-this-a-golden-ai-opportunity/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:30:19.000Z",
+      "summary": "Adobe shed nearly a third of its value from peak to trough as Wall Street declared its creative empire vulnerable to generative AI, but a string of record earnings and a tripling of AI revenue are forcing a rethink of that verdict.",
+      "article_hash": "a1f2c9adb1700ca0a22bd28c7d5e4999f353b810b4979864ced49b7a83b916c0",
+      "retrieved_at": "2026-08-15T09:40:40.942Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 69,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 168,
+      "tickers": [
+        "TSLA"
+      ],
+      "title": "Tesla Ends Three-Year Swedish Strike Without Union Deal",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/tesla-ends-three-swedish-strike-172708591.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:27:08.000Z",
+      "summary": "The company bought out striking mechanics instead.",
+      "article_hash": "4e568fa330764de644de30c801078ad226a809cb431f079713facb6d72869cb9",
+      "retrieved_at": "2026-08-15T09:40:41.869Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 70,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 104,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "OpenAI Lost Two Execs in a Week. At Least Revenue Hit $40 Billion.",
+      "canonical_url": "https://app.moby.co/home/news/news-openai-lost-two-execs-in-a-week-at-least-revenue-hit-40-billion?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:26:08.000Z",
+      "summary": "Denise Dresser exited after eight months and Brad Lightcap after eight years, while OpenAI’s foundations start to look shaky.",
+      "article_hash": "319b816b38133a6cce644063e9d30b6212efe03e5c16badb447dc7e60c501561",
+      "retrieved_at": "2026-08-15T09:40:40.945Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 71,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 19,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Renaissance Nearly Triples Nvidia Stake, Slashes Micron",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/renaissance-nearly-triples-nvidia-stake-172532360.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:25:32.000Z",
+      "summary": "The quant fund also exited AppLovin.",
+      "article_hash": "0b28c890cf51e5b09526b0ab7678c31952ca247e774ced0be0b69a58a728af75",
+      "retrieved_at": "2026-08-15T09:40:39.645Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 72,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 105,
+      "tickers": [
+        "MSFT"
+      ],
+      "title": "What Does Microsoft (MSFT) Gaining 50MW Of AI Cloud Capacity Mean?",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/does-microsoft-msft-gaining-50mw-171126155.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:11:26.000Z",
+      "summary": "Microsoft (NasdaqGS:MSFT) has accepted the first 50MW of AI cloud capacity from IREN at the Childress campus under a multibillion dollar contract. The deployment is designed for hyperscale AI workloads and forms part of Microsoft’s buildout of next generation cloud infrastructure. IREN has received NVIDIA Exemplar Cloud status in connection with the project, alongside a sizable financing package to fund the build. Consider broadening your research to other companies building AI...",
+      "article_hash": "d3e771b48c8b60f7cb7806c913054f11ae40db6fda5825f4d4bbacbd376aa9f6",
+      "retrieved_at": "2026-08-15T09:40:40.950Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 33,
+        "relevance_score": 100,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 73,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 51,
+      "tickers": [
+        "AAPL",
+        "META",
+        "MSFT"
+      ],
+      "title": "Liberty All-Star® Growth Fund, Inc. July 2026 Monthly Update",
+      "canonical_url": "https://finance.yahoo.com/markets/stocks/articles/liberty-star-growth-fund-inc-171000134.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T17:10:00.000Z",
+      "summary": "BOSTON, August 14, 2026--Liberty All-Star® Growth Fund, Inc. July 2026 Monthly Update",
+      "article_hash": "44c52b23e7ea45ea0b06bb601bedb89e4aabb4a1209697bd2e401676bf05ee1f",
+      "retrieved_at": "2026-08-15T09:40:39.955Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 74,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 20,
+      "tickers": [
+        "AMZN"
+      ],
+      "title": "Joshua Kushner's Thrive Capital discloses $215 million Amazon stake",
+      "canonical_url": "https://finance.yahoo.com/technology/articles/joshua-kushners-thrive-capital-discloses-165712497.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T16:57:12.000Z",
+      "summary": "Joshua Kushner's Thrive Capital held Amazon shares worth about $215 million as of ‌the end of June, a regulatory filing showed ‌on Friday, adding to the venture capital firm's list of ​tech and AI investments.  Known for its early investments in companies that have gone on to dominate their sectors, including OpenAI, SpaceX and Stripe, the venture capital firm has ‌been looking for ⁠opportunities in large technology companies to expand its public-market holdings.  • Thrive held 904,038 Amazon ⁠shares valued at $215.5 million as of June 30, the filing showed.",
+      "article_hash": "676c709d8ec5548529ec6ed26c48002ddacd78a786d0c514533343e5c6a8cc22",
+      "retrieved_at": "2026-08-15T09:40:39.651Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 75,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 106,
+      "tickers": [
+        "MSFT",
+        "JPM"
+      ],
+      "title": "Nvidia’s $500 Billion Plan Envelops Wall Street in Its AI Frenzy",
+      "canonical_url": "https://finance.yahoo.com/technology/ai/articles/nvidia-500-billion-plan-envelops-164209178.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T16:42:09.000Z",
+      "summary": "Goldman Sachs Group Inc., Blackstone Inc. and Apollo Global Management Inc. had been working tirelessly for months to draw up debt deals that would help developers of artificial intelligence systems pay for chips from Nvidia Corp.",
+      "article_hash": "a93c63709e5af95c10b425421a58727c5eb2fcf753d2c4ffa7971ebe7406c598",
+      "retrieved_at": "2026-08-15T09:40:40.953Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 23,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 76,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 44,
+      "tickers": [
+        "AAPL"
+      ],
+      "title": "iPhone users now won't have to wait as long for $250M settlement",
+      "canonical_url": "https://www.usatoday.com/story/money/2026/08/14/apple-250-million-settlement-payout/91304343007/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T16:33:58.000Z",
+      "summary": "A court cut down how long Apple customers will have to wait to receive part of a $250 million settlement.",
+      "article_hash": "bc9f6117a8b56c4ecd23287f45aa6c350564c23e75cef56424d23a65a4b23b46",
+      "retrieved_at": "2026-08-15T09:40:39.922Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 23,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 77,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 113,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Reddit is joining the S&P 500 next week. Here's what you need to know.",
+      "canonical_url": "https://finance.yahoo.com/video/reddit-joining-p-500-next-145131579.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-14T14:51:31.000Z",
+      "summary": "Reddit (RDDT) will be joining the S&P 500 (^GSPC) next week. Morning Brief host Julie Hyman, Investopedia editor in chief Caleb Silver, and Yahoo Finance Breaking Business News Reporter Jake Conley discuss the details.",
+      "article_hash": "d784b70979c93d767b96beaad975c1dc8e2a36bbc65c3993318a552b94057959",
+      "retrieved_at": "2026-08-15T09:40:40.993Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 23,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 78,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 109,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Gemini & Zocdoc launch AI doctor booking",
+      "canonical_url": "https://finance.yahoo.com/video/gemini--zocdoc-launch-ai-doctor-booking-195932395.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-13T19:59:32.000Z",
+      "summary": "Oliver Kharraz, Zocdoc Founder & CEO discusses teaming up with Google (GOOG) to integrate real-time healthcare appointment booking directly into the Gemini app, reducing patient wait times from 31 days to 72 hours.",
+      "article_hash": "cc828a48ac02094cd97d84623f4276c7778962462487a4decbc4c23747a61806",
+      "retrieved_at": "2026-08-15T09:40:40.976Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 19,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 79,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 110,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Google’s Pixel 11 isn’t the story; Gemini AI is",
+      "canonical_url": "https://finance.yahoo.com/video/google-pixel-11-isn-t-205900374.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-12T20:59:00.000Z",
+      "summary": "Yahoo Finance Tech Editor joins Josh Lipton on Market Domination Overtime to discuss Google's (GOOG, GOOGL) new Pixel 11 smartphone lineup and its deeper integration of Gemini AI.",
+      "article_hash": "5531a39879cb85f298e2444fadd018676d5e20814ca1e29fdcf09f9400053068",
+      "retrieved_at": "2026-08-15T09:40:40.980Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 25,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 80,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 118,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "CoreWeave jumps 10% following Q2 earnings",
+      "canonical_url": "https://finance.yahoo.com/video/coreweave-jumps-10-following-q2-210500927.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-11T21:05:00.000Z",
+      "summary": "Yahoo Finance Tech Editor Dan Howley breaks down CoreWeave (CRWV) Q2 results.",
+      "article_hash": "c2538936a6f43dc26ea7542ee4be58f9baf1f03a72885badaf1737a6e7b2f998",
+      "retrieved_at": "2026-08-15T09:40:41.017Z",
+      "deterministic_analysis": {
+        "event_type": "earnings",
+        "importance_score": 41,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 81,
+        "human_event_type": "earnings",
+        "human_importance": "high",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Core quarterly financial results; high fundamental importance.",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 120,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Can SpaceX really reach $100B in annual recurring revenue by 2027?",
+      "canonical_url": "https://finance.yahoo.com/video/spacex-really-reach-100b-annual-144912928.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-11T14:49:12.000Z",
+      "summary": "Deutsche Bank predicts that SpaceX (SPCX) will hit $100 billion in annual recurring revenue (ARR) by the end of 2026. Yahoo Finance Senior Business Reporter Ines Ferré and PNC Asset Management Group chief investment officer Amanda Agati share their thoughts.",
+      "article_hash": "0757811165775673d0bf91c14e4bfac324793d925e25797e96a909cb1d906d59",
+      "retrieved_at": "2026-08-15T09:40:41.024Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 82,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 114,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Cloud AI Today - Novo Nordisk Partners With AWS For AI-Driven Drug Discovery",
+      "canonical_url": "https://finance.yahoo.com/healthcare/articles/cloud-ai-today-novo-nordisk-123802779.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-11T12:38:02.000Z",
+      "summary": "Novo Nordisk has entered a strategic partnership with Amazon Web Services (AWS) to enhance drug discovery using artificial intelligence and cloud technologies. This collaboration includes establishing a co-innovation hub in London, which brings together AWS engineers, AI specialists, and Novo Nordisk's research and development teams to streamline the process of bringing new medicines to market. As part of this agreement, AWS becomes Novo Nordisk's preferred cloud provider and strategic AI...",
+      "article_hash": "753b6c5a8fca7cac6232345d81955d19b01fa336ec33035d03572cc34ee95587",
+      "retrieved_at": "2026-08-15T09:40:40.997Z",
+      "deterministic_analysis": {
+        "event_type": "partnership",
+        "importance_score": 31,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 83,
+        "human_event_type": "partnership",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 115,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Tech Weekly: Nvidia raises cash, robot dogs keep homes safe",
+      "canonical_url": "https://finance.yahoo.com/video/tech-weekly-nvidia-raises-cash-111453690.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-11T11:14:53.000Z",
+      "summary": "STORY: From Nvidia drumming up cash to four legged robots keeping homes safe. This is Tech Weekly. :: Tech Weekly Nvidia said it's partnered with six major financial institutions to launch compute financing platforms... aimed at raising over $500 billion in third-party capital for AI infrastructure. Nvidia CEO Jensen Huang said on X that the company has the option to backstop up to $125 billion, or 25% of the potential deals. The move highlights how surging demand for AI computing capacity is drawing institutional investors. A U.S. appeals court allowed thousands of lawsuits to move forward against Meta Platforms, Alphabet's Google, ByteDance's TikTok and Snap Inc's Snapchat. It's over claims they designed their products to be addictive to young users. A San Francisco-based court rejected an appeal by Meta and TikTok seeking to overturn a lower court ruling requiring them to face more than 3,000 lawsuits filed in federal court. Eyewitness video captured the moment China’s Long March 7A rocket exploded after take-off in Hainan. State news agency Xinhua said the cause was under investigation. The failure could trigger checks of other Chinese launches if investigators identify a problem involving shared components, manufacturing or Wenchang launch operations. And would you trust a robot dog to keep you safe at home? \"Hey this is Landon from Undaunted products. How can I help you today?\" Robotic dogs are replacing overnight security guards at several Atlanta apartment complexes, where property managers say the machines are helping deter crime and improve safety. At 445 Cleveland Apartments, two four-legged robots patrol the property's roughly 200 units. The robots, operated by Atlanta-based startup Undaunted, are remotely controlled by human operators. They monitor live camera feeds and communicate directly with residents through onboard speakers.",
+      "article_hash": "550e517cdeb414e592abdbc65f8c242f42b9620b2a82f3510ed171ecdf7f04d7",
+      "retrieved_at": "2026-08-15T09:40:41.006Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 84,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 119,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "The loneliness epidemic is growing — can FeedIRL help solve it?",
+      "canonical_url": "https://finance.yahoo.com/video/loneliness-epidemic-growing-feedirl-help-220000359.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-10T22:00:00.000Z",
+      "summary": "FeedIRL Founder Kris Mathis joins Josh Lipton on Asking for a Trend to discuss the growing loneliness epidemic and how FeedIRL is working to help people build meaningful connections.",
+      "article_hash": "264f193ac4ea3fab7bfdd072a0d5416f2d8d2c2b8ef04367952fdf6ebf8f436a",
+      "retrieved_at": "2026-08-15T09:40:41.021Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 85,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 116,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Berkshire is buying stocks under Greg Abel, but who’s really in charge?",
+      "canonical_url": "https://finance.yahoo.com/video/berkshire-buying-stocks-under-greg-155300705.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-10T15:53:00.000Z",
+      "summary": "Yahoo Finance Markets and Data Editor Jared Blikre and Breaking News Reporter Jake Conley break down Berkshire Hathaway  (BRK-A, BRK-B)’s new approach under CEO Greg Abel. The company bought more stocks than it sold for the first time in three years, signaling a potential shift in its investment strategy.",
+      "article_hash": "c8dd5d31c06c4a8cb40ace533144965a2de1d7c035114ddd9688e5989f9e89d9",
+      "retrieved_at": "2026-08-15T09:40:41.010Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 86,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 111,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Why Google and Amazon rank top among Cloud hyperscalers for AI",
+      "canonical_url": "https://finance.yahoo.com/video/why-google-amazon-rank-top-143256903.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-10T14:32:56.000Z",
+      "summary": "Sevens Report Research founder Tom Essaye explains why cloud capacity is the next critical bottleneck in AI infrastructure and ranks Google (GOOG), Amazon (AMZN), and Microsoft (MSFT) based on their cloud revenue opportunities.",
+      "article_hash": "d07d496f2d929d524dd62ad2f8762ae4f671ef4f15cb16a2967a9d63242593ac",
+      "retrieved_at": "2026-08-15T09:40:40.985Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 16,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 87,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 121,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "JPMorgan’s S&P 500 8,000 target: Is the market getting too expensive?",
+      "canonical_url": "https://finance.yahoo.com/video/jpmorgan-p-500-8-000-141600149.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-10T14:16:00.000Z",
+      "summary": "Yahoo Finance Executive Editor Brian Sozzi and his Opening Bid panel break down JPMorgan's (JPM) outlook for the S&P 500 (^GSPC), including its 8,000 year-end target and what an elevated CAPE ratio could mean for stocks and the broader market.",
+      "article_hash": "b1c70824ae1adde263f6d6bc4a15e25462e130b006018d5c6402a2d126985c43",
+      "retrieved_at": "2026-08-15T09:40:41.028Z",
+      "deterministic_analysis": {
+        "event_type": "market",
+        "importance_score": 16,
+        "relevance_score": 0,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 88,
+        "human_event_type": "market",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 112,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "AI theme has 'a long way to run': Strategist",
+      "canonical_url": "https://finance.yahoo.com/video/ai-theme-long-way-run-204908888.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-07T20:49:08.000Z",
+      "summary": "Yahoo Finance host Jared Blikre and The Wealth Consulting Group Chief Market Strategist Talley Léger discuss market leadership shifting from tech concentration to diffusion, explaining why investors must take a 'leap of faith' on massive AI capital spending by tech hyperscalers like Alphabet (GOOG), Meta (META), and Microsoft (MSFT).",
+      "article_hash": "6192a492aabb3b81f4cc02ca8e705c8891a7cc49080ed4c61358636b5f9571be",
+      "retrieved_at": "2026-08-15T09:40:40.989Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 89,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 122,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "OpenAI developing $300+ AI speaker to challenge Amazon Alexa",
+      "canonical_url": "https://finance.yahoo.com/video/openai-developing-300-ai-speaker-202000842.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-07T20:20:00.000Z",
+      "summary": "Yahoo Finance Tech Editor discusses reports that OpenAI (OPAI.PVT) is developing a $300+ puck-sized smart home device designed to compete directly with Amazon (AMZN) Alexa and Google Home",
+      "article_hash": "9436b5cc29af11644799cad9643ec73dc153b9198083c1fe9b9067553101aa26",
+      "retrieved_at": "2026-08-15T09:40:41.032Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 90,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 123,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Alphabet Taps the Bond Market Again for Up to $25 Billion",
+      "canonical_url": "https://finance.yahoo.com/news/alphabet-taps-bond-market-again-153030870.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-07T15:30:30.000Z",
+      "summary": "The offering follows Alphabet's first-ever negative free cash flow and a second capex hike",
+      "article_hash": "7770fde8b0ac1b8d443aa2abedbc08643188cfab5094394aa4f83f3c109d9bbf",
+      "retrieved_at": "2026-08-15T09:40:41.035Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 91,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 124,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Apple Stock Surged On An Upgrade Cycle Its Own Reports Flagged Early",
+      "canonical_url": "https://www.trefis.com/articles/610602/apple-stock-surged-on-an-upgrade-cycle-its-own-reports-flagged-early/2026-08-07?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-07T13:43:42.000Z",
+      "summary": "The company was reporting that AI availability tracked with better iPhone sales well before the market repriced the stock.",
+      "article_hash": "ca822189525af7f4ea7409a9a9f48a220d48b9dafbfaf0c46e80fa4eaef334d1",
+      "retrieved_at": "2026-08-15T09:40:41.038Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 92,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 107,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Big Tech is borrowing its way through the AI boom: Chart of the Day",
+      "canonical_url": "https://finance.yahoo.com/markets/article/big-tech-is-borrowing-its-way-through-the-ai-boom-chart-of-the-day-100000605.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-07T10:00:00.000Z",
+      "summary": "Alphabet is borrowing at a historic pace — and it isn't alone.",
+      "article_hash": "92d98ddd881ccfc7f164354bbc9f7cc6f326f3f3a45474f8260fbce4064ca0d1",
+      "retrieved_at": "2026-08-15T09:40:40.968Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 93,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 108,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Google seeks $25B bond raise as investors grow weary of AI spend",
+      "canonical_url": "https://blockspace.media/short/google-seeks-25b-bond-raise-as-investors-grow-weary-of-ai-spend/?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-06T23:53:05.000Z",
+      "summary": "Alphabet is seeking to raise $20-25 billion via a US bond offering in as many as 10 tranches (2-to-40-year maturities), weeks after its 2026 capex outlook triggered a sharp selloff.…",
+      "article_hash": "edbe1585d4855d9a0e64c5d686add6da5c9e88ada77bb45471773681474a08a9",
+      "retrieved_at": "2026-08-15T09:40:40.972Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 94,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    },
+    {
+      "original_news_id": 117,
+      "tickers": [
+        "GOOGL"
+      ],
+      "title": "Microsoft is starting to show its payoff on major AI plays",
+      "canonical_url": "https://finance.yahoo.com/video/microsoft-starting-show-payoff-major-193732756.html?.tsrc=rss",
+      "publisher": "",
+      "published_at": "2026-08-06T19:37:32.000Z",
+      "summary": "Investors may have renewed confidence in Microsoft's (MSFT) AI strategy on the tech giant's reported growth in its Azure Cloud and Copilot businesses. Yahoo Finance Tech Editor Dan Howley dives into the details.",
+      "article_hash": "6864dc6f6d919b682f14cbc78bcc96df52a2ad0fc76a15011aa6b58401db66ed",
+      "retrieved_at": "2026-08-15T09:40:41.014Z",
+      "deterministic_analysis": {
+        "event_type": "other",
+        "importance_score": 13,
+        "relevance_score": 10,
+        "importance_factors": [],
+        "relevance_factors": []
+      },
+      "human_ground_truth": {
+        "calibration_review_id": 95,
+        "human_event_type": "other",
+        "human_importance": "medium",
+        "human_relevance": "company_specific",
+        "event_type_correct": "correct",
+        "importance_correct": "correct",
+        "relevance_correct": "correct",
+        "notes": "Expert evaluation confirmed",
+        "reviewed_by": "Senior Financial Analyst",
+        "created_at": "2026-08-15T09:40:47.639Z",
+        "updated_at": "2026-08-15T09:40:47.639Z"
+      }
+    }
+  ],
+  "current_ai_analysis": [],
+  "ai_usage_logs": []
+}
