@@ -32,10 +32,37 @@ export async function getDb(): Promise<Database> {
   if (fs.existsSync(DB_PATH)) {
     try {
       const filebuffer = fs.readFileSync(DB_PATH);
-      db = new SQL.Database(filebuffer);
+      
+      // Validate SQLite header to prevent uncatchable wasm abort or crashes due to unsupported file formats
+      const isSQLite = filebuffer.length >= 16 && filebuffer.toString('utf8', 0, 15) === 'SQLite format 3';
+      if (!isSQLite) {
+        throw new Error('File does not have a valid SQLite 3 header');
+      }
+
+      // Convert Node Buffer to an independent Uint8Array with offset 0 and matching length.
+      // Since Node's fs.readFileSync can return a pooled Buffer (where byteOffset > 0), passing
+      // the Buffer directly to sql.js can cause it to read the start of the shared pool's
+      // ArrayBuffer, leading to "unsupported file format" errors.
+      const uint8Array = new Uint8Array(filebuffer.length);
+      uint8Array.set(filebuffer);
+
+      const tempDb = new SQL.Database(uint8Array);
+      // Run a test query to verify the database file internal structures are not corrupted
+      tempDb.exec("SELECT count(*) FROM sqlite_master;");
+
+      db = tempDb;
       logger.info(`Loaded SQLite database from ${DB_PATH}`);
     } catch (err: any) {
       logger.warn(`Failed to read database file, creating fresh database: ${err.message}`);
+      // Remove corrupted database file if exists to prevent recurring issues
+      try {
+        if (fs.existsSync(DB_PATH)) {
+          fs.unlinkSync(DB_PATH);
+          logger.info(`Deleted corrupted or invalid database file at ${DB_PATH}`);
+        }
+      } catch (unlinkErr: any) {
+        logger.error(`Failed to delete invalid database file: ${unlinkErr.message}`);
+      }
       db = new SQL.Database();
     }
   } else {
@@ -309,7 +336,11 @@ export function saveDbToDisk(database?: Database) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(DB_PATH, buffer);
+    // Write atomically to a temporary file first, then rename it.
+    // This prevents file corruption if the process is terminated mid-write.
+    const tmpPath = DB_PATH + '.tmp';
+    fs.writeFileSync(tmpPath, buffer);
+    fs.renameSync(tmpPath, DB_PATH);
   } catch (err: any) {
     logger.error(`Error saving database to disk: ${err.message}`);
   }

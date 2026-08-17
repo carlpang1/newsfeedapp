@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  newsfeed-aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: newsfeed_aggregator
+    restart: unless-stopped
+    ports:
+      - "8510:3000"
+    volumes:
+      # Persist the SQLite database across container restarts and updates
+      - newsfeed_data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_PATH=/app/data/news.db
+      # Insert your Google Gemini API key below to unlock advanced AI analysis layers
+      - GEMINI_API_KEY=your_gemini_api_key_here
+      - AI_PROVIDER=gemini
+      - AI_MODEL=gemini-3.6-flash
+
+volumes:
+  newsfeed_data:
+    driver: local

@@ -234,7 +234,13 @@ export class AIEngine {
 
       return { success: true, analysis, status: 'completed' };
     } catch (err: any) {
-      logger.error(`AI analysis failed for news ID ${newsId}: ${err.message}`);
+      const errStr = err?.message || '';
+      const isQuota = errStr.includes('429') || errStr.includes('RESOURCE_EXHAUSTED') || errStr.includes('quota');
+      if (isQuota) {
+        logger.info(`[Gemini API] Quota or rate limit reached for news ID ${newsId}. Gracefully falling back to baseline indicators.`);
+      } else {
+        logger.warn(`[Gemini API] News analysis warning for news ID ${newsId} (${errStr}). Falling back to baseline indicators.`);
+      }
 
       // Log failure in usage log
       this.logAIUsage(database, {

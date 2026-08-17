@@ -13,6 +13,7 @@ import {
   Calendar,
   Layers,
   Inbox,
+  LineChart,
 } from 'lucide-react';
 import {
   Ticker,
@@ -54,10 +55,11 @@ import { SettingsModal } from './components/SettingsModal.tsx';
 import { CalibrationModal } from './components/CalibrationModal.tsx';
 import { AIAnalysisModal } from './components/AIAnalysisModal.tsx';
 import { TickerIntelligenceView } from './components/TickerIntelligenceView.tsx';
+import { TechnicalSignalsView } from './components/TechnicalSignalsView.tsx';
 
 export default function App() {
   // Navigation tab state
-  const [activeMainTab, setActiveMainTab] = useState<'news_feed' | 'ticker_intelligence'>('ticker_intelligence');
+  const [activeMainTab, setActiveMainTab] = useState<'news_feed' | 'ticker_intelligence' | 'technical_analyst'>('ticker_intelligence');
 
   // Global Data State
   const [tickers, setTickers] = useState<Ticker[]>([]);
@@ -378,13 +380,33 @@ export default function App() {
                 SUMMARY
               </span>
             </button>
+
+            <button
+              id="top-nav-technical-signals-tab"
+              onClick={() => setActiveMainTab('technical_analyst')}
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer flex items-center gap-2 ${
+                activeMainTab === 'technical_analyst'
+                  ? 'bg-indigo-600 text-white shadow-md'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              <LineChart className="w-4 h-4 text-indigo-300" />
+              <span>Technical & AI Signals</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-indigo-500/40 text-indigo-100 border border-indigo-400/30">
+                AI SIGNALS
+              </span>
+            </button>
           </div>
 
           <div className="hidden md:flex items-center text-xs text-slate-400 gap-3">
             <span>
               Active View:{' '}
               <strong className="text-white font-mono">
-                {activeMainTab === 'news_feed' ? 'Aggregated Articles Feed' : 'Ticker Intelligence Summary Page'}
+                {activeMainTab === 'news_feed'
+                  ? 'Aggregated Articles Feed'
+                  : activeMainTab === 'ticker_intelligence'
+                  ? 'Ticker Intelligence Summary Page'
+                  : 'Stock Technicals & AI Signals Engine'}
               </strong>
             </span>
           </div>
@@ -393,7 +415,14 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
-        {activeMainTab === 'ticker_intelligence' ? (
+        {activeMainTab === 'technical_analyst' ? (
+          <TechnicalSignalsView
+            tickers={tickers}
+            selectedTicker={selectedTicker}
+            onSelectTicker={setSelectedTicker}
+            onOpenArticlePreview={(art) => setPreviewArticle(art)}
+          />
+        ) : activeMainTab === 'ticker_intelligence' ? (
           <TickerIntelligenceView
             tickers={tickers}
             selectedTicker={selectedTicker}
